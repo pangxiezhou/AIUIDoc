@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.7 AIUI错误码 &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="4. 集成方式" href="../chapters/04_develop.html"/>
+        <link rel="next" title="5. 唤醒和合成" href="../chapters/05_wakeup_tts.html"/>
+        <link rel="prev" title="4.6 AIUIEvent" href="06_aiuievent.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_coreboard.html">4.1 核心板模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_softcore.html">4.2 软核模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_ctrboard.html">4.3 上位机模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_uart&amp;sdk.html">4.4 串口和SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_aiuimessage.html">4.4 AIUIMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_aiuievent.html">4.6 AIUIEvent</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7 AIUI错误码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/04_develop.html">4. 集成方式</a> &raquo;</li>
+      
+    <li>4.7 AIUI错误码</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c04/07_errorcode.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiui">
+<span id="error-code-label"></span><h1>4.7 AIUI错误码<a class="headerlink" href="#aiui" title="永久链接至标题">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="18%" />
+<col width="39%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>错误码</td>
+<td>取值</td>
+<td>含义</td>
+</tr>
+<tr class="row-even"><td>MSP_ERROR_INVALID_PARA</td>
+<td>10106</td>
+<td>参数名称错误</td>
+</tr>
+<tr class="row-odd"><td>MSP_ERROR_INVALID_PARA_VALUE</td>
+<td>10107</td>
+<td>参数取值错误</td>
+</tr>
+<tr class="row-even"><td>MSP_ERROR_NOT_FOUND</td>
+<td>10116</td>
+<td>云端无对应的 scene 场景参数</td>
+</tr>
+<tr class="row-odd"><td>MSP_ERROR_NO_RESPONSE_DATA</td>
+<td>10120</td>
+<td>结果等待超时</td>
+</tr>
+<tr class="row-even"><td>MSP_ERROR_LMOD_RUNTIME_EXCEPTION</td>
+<td>16005</td>
+<td>MSC 内部错误</td>
+</tr>
+<tr class="row-odd"><td>ERROR_NO_NETWORK</td>
+<td>20001</td>
+<td>无有效的网络连接</td>
+</tr>
+<tr class="row-even"><td>ERROR_NETWORK_TIMEOUT</td>
+<td>20002</td>
+<td>网络连接超时</td>
+</tr>
+<tr class="row-odd"><td>ERROR_NET_EXPECTION</td>
+<td>20003</td>
+<td>网络连接发生异常</td>
+</tr>
+<tr class="row-even"><td>ERROR_INVALID_RESULT</td>
+<td>20004</td>
+<td>无有效的结果</td>
+</tr>
+<tr class="row-odd"><td>ERROR_NO_MATCH</td>
+<td>20005</td>
+<td>无匹配结果</td>
+</tr>
+<tr class="row-even"><td>ERROR_AUDIO_RECORD</td>
+<td>20006</td>
+<td>录音失败</td>
+</tr>
+<tr class="row-odd"><td>ERROR_COMPONENT_NOT_INSTALLED</td>
+<td>21001</td>
+<td>没有安装服务组件</td>
+</tr>
+<tr class="row-even"><td>ERROR_SERVICE_BINDER_DIED</td>
+<td>21020</td>
+<td>与服务的绑定已消亡</td>
+</tr>
+<tr class="row-odd"><td>ERROR_LOCAL_NO_INIT</td>
+<td>22001</td>
+<td>本地引擎未初始化</td>
+</tr>
+<tr class="row-even"><td>ERROR_UNKNOWN</td>
+<td>20999</td>
+<td>未知错误</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chapters/05_wakeup_tts.html" class="btn btn-neutral float-right" title="5. 唤醒和合成" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="06_aiuievent.html" class="btn btn-neutral" title="4.6 AIUIEvent" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

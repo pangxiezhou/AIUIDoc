@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.3 上位机模式 &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="4. 集成方式" href="../chapters/04_develop.html"/>
+        <link rel="next" title="4.4 串口和SDK" href="04_uart&amp;sdk.html"/>
+        <link rel="prev" title="4.2 软核模式" href="02_softcore.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_coreboard.html">4.1 核心板模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_softcore.html">4.2 软核模式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3 上位机模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.3.1 结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.3.2 串口协议及数据定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3.4 调用流程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.4.4 其他平台</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_uart&amp;sdk.html">4.4 串口和SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_aiuimessage.html">4.4 AIUIMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_aiuievent.html">4.6 AIUIEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_errorcode.html">4.7 AIUI错误码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/04_develop.html">4. 集成方式</a> &raquo;</li>
+      
+    <li>4.3 上位机模式</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c04/03_ctrboard.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ctrboard-label">
+<span id="id1"></span><h1>4.3 上位机模式<a class="headerlink" href="#ctrboard-label" title="永久链接至标题">¶</a></h1>
+<p>适用：上位机和AIUI模块通过串口通信，适用于有屏幕需求或硬件扩展的要求（如机器人，智能家居等）</p>
+<div class="section" id="id2">
+<h2>4.3.1 结构<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<img alt="../_images/ctrboard.png" src="../_images/ctrboard.png" />
+<p>ControlService充当AIUIService和上位机之间的中介，一面负责将AIUI的结果通过串口发送给上位机，一面将上位机通过串口发送的指令发送到AIUI。</p>
+<p>AIUIProductDemo是个可选的选项，因为如果在上位机上对结果进行解析播放，那么AIUI模块上的AIUIProductDemo的播报就不必要了。</p>
+<p>上位机模式和核心板模式在开放集成时有诸多<a class="reference internal" href="04_uart&amp;sdk.html#uart-sdk-label"><span class="std std-ref">类似之处</span></a>。</p>
+</div>
+<div class="section" id="id3">
+<h2>4.3.2 串口协议及数据定义<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>参见<a class="reference internal" href="../c08/01_protocal.html#uart-protocal-label"><span class="std std-ref">8.1 AIUI串口协议</span></a>。</p>
+</div>
+<div class="section" id="id4">
+<h2>4.3.4 调用流程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>根据<a class="reference internal" href="../c08/01_protocal.html#uart-protocal-label"><span class="std std-ref">8.1 AIUI串口协议</span></a>，在<a class="reference internal" href="../c02/04_Q&amp;A.html#develop-kit-lable"><span class="std std-ref">开发包</span></a>中有<a class="reference internal" href="../c08/02_uart_android.html#uart-android-label"><span class="std std-ref">串口协议Android SDK</span></a>的实现。</p>
+<p>上位机开发调用流程可以参考该SDK的<a class="reference internal" href="../c08/02_uart_android.html#uart-android-code-label"><span class="std std-ref">代码示例</span></a>。</p>
+<p>完整流程参考<a class="reference internal" href="../c02/04_Q&amp;A.html#develop-kit-lable"><span class="std std-ref">开发包</span></a>中UART下的UARTKitCtrDemo源码。</p>
+<p>其实流程简单一点理解就是通过串口收发AIUI消息，获取结果和控制AIUI，与<a class="reference internal" href="01_coreboard.html#aiui-sdk-deep-label"><span class="std std-ref">AIUI SDK理解</span></a>类似。</p>
+</div>
+<div class="section" id="id5">
+<h2>4.4.4 其他平台<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>如果上位机是Android的话，那上位机集成开发包中串口SDK UARTKit就能很方便的开发。</p>
+<p>如果上位机是其他平台，可以先通过<a class="reference external" href="http://bbs.xfyun.cn/forum.php?mod=viewthread&amp;tid=17728&amp;extra=page%3D1">AIUI串口历险记</a>熟悉AIUI
+串口协议的一些具体内容，再参考<a class="reference internal" href="../c08/02_uart_android.html#uart-android-code-label"><span class="std std-ref">串口Android SDK的示例</span></a>熟悉处理流程。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04_uart&amp;sdk.html" class="btn btn-neutral float-right" title="4.4 串口和SDK" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02_softcore.html" class="btn btn-neutral" title="4.2 软核模式" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

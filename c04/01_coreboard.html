@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.1 核心板模式 &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="4. 集成方式" href="../chapters/04_develop.html"/>
+        <link rel="next" title="4.2 软核模式" href="02_softcore.html"/>
+        <link rel="prev" title="4. 集成方式" href="../chapters/04_develop.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1 核心板模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.1.1 结构说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiuiservicekit-sdk">4.1.2 AIUIServiceKit SDK接口说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiui-sdk-deep-label">4.1.3 理解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiui-servicekit-sdk-label">4.1.4 调用流程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_softcore.html">4.2 软核模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_ctrboard.html">4.3 上位机模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_uart&amp;sdk.html">4.4 串口和SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_aiuimessage.html">4.4 AIUIMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_aiuievent.html">4.6 AIUIEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_errorcode.html">4.7 AIUI错误码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/04_develop.html">4. 集成方式</a> &raquo;</li>
+      
+    <li>4.1 核心板模式</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c04/01_coreboard.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="coreboad-label">
+<span id="id1"></span><h1>4.1 核心板模式<a class="headerlink" href="#coreboad-label" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>4.1.1 结构说明<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>适用：因为AIUI硬件上的预留限制，核心板模式适用无屏幕连接要求，无特殊硬件要求（蓝牙或者红外AIUI模块均不支持）</p>
+<p>整体结构如下：</p>
+<img alt="../_images/coreboard.png" src="../_images/coreboard.png" />
+<p>开发者APP集成AIUIServiceKit，运行在AIUI模块上，从AIUI Service获取结果，进行解析处理，与评估板上<a class="reference internal" href="../c02/02_explain.html#demoboard-relationship-label"><span class="std std-ref">AIUIProductDemo</span></a>的效果类似。</p>
+</div>
+<div class="section" id="aiuiservicekit-sdk">
+<h2>4.1.2 AIUIServiceKit SDK接口说明<a class="headerlink" href="#aiuiservicekit-sdk" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="sendmessage-label">
+<dt>AIUIAgent</dt>
+<dd><p class="first">AIUIServiceKit中用于与AIUIService交互的接口类为<code class="docutils literal"><span class="pre">AIUIAgent</span></code>。</p>
+<p><code class="docutils literal"><span class="pre">AIUIAgent</span></code>提供如下接口:</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="c1">//创建AIUIAgent实例</span>
+<span class="kd">static</span> <span class="kt">void</span> <span class="nf">createAgent</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AIUIListener</span> <span class="n">listener</span><span class="o">)</span>
+
+<span class="c1">//发送AIUI消息</span>
+<span class="kt">void</span> <span class="nf">sendMessage</span><span class="o">(</span><span class="n">AIUIMessage</span> <span class="n">message</span><span class="o">)</span>
+
+<span class="c1">//销毁AIUIAgent实例</span>
+<span class="kt">void</span> <span class="nf">destroy</span><span class="o">()</span>
+</pre></div>
+</div>
+</dd>
+<dt>AIUIListener</dt>
+<dd><p class="first">创建<code class="docutils literal"><span class="pre">AIUIAgent</span></code>时传递的参数<code class="docutils literal"><span class="pre">AIUIListener</span></code>是用于接受AIUIService抛出事件的监听器。</p>
+<p><code class="docutils literal"><span class="pre">AIUIListener</span></code>定义如下:</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nc">AIUIListener</span>
+<span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">AIUIEvent</span> <span class="n">event</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="aiui-event-def-label">
+<dt>AIUIEvent</dt>
+<dd><p class="first"><code class="docutils literal"><span class="pre">AIUIListener</span></code>中监听的抛出事件的类型是<code class="docutils literal"><span class="pre">AIUIEvent</span></code>。</p>
+<p><code class="docutils literal"><span class="pre">AIUIEvent</span></code>定义如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">AIUIEvent</span>
+<span class="o">{</span>
+  <span class="kt">int</span> <span class="n">eventType</span><span class="o">;</span> <span class="c1">//事件类型</span>
+  <span class="kt">int</span> <span class="n">arg1</span><span class="o">;</span>      <span class="c1">//参数1</span>
+  <span class="kt">int</span> <span class="n">arg2</span><span class="o">;</span>      <span class="c1">//参数2</span>
+  <span class="n">String</span> <span class="n">info</span><span class="o">;</span>
+  <span class="n">Bundle</span> <span class="n">data</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p class="last">AIUI定义了多种<code class="docutils literal"><span class="pre">AIUIEvent</span></code>，有不同<code class="docutils literal"><span class="pre">eventType</span></code>。当<code class="docutils literal"><span class="pre">AIUIEvent</span></code>取不同的<code class="docutils literal"><span class="pre">eventType</span></code>时，
+其余字段有不同的定义，详细定义请见<a class="reference internal" href="06_aiuievent.html#aiuievent-label"><span class="std std-ref">AIUIEvent</span></a>的定义说明。</p>
+</dd>
+</dl>
+<dl class="docutils" id="aiui-msg-def-label">
+<dt>AIUIMessage</dt>
+<dd><p class="first">AIUIAgent中<code class="docutils literal"><span class="pre">sendMessage</span></code>方法用于向AIUIService发送AIUI消息。消息类型是<code class="docutils literal"><span class="pre">AIUIMessage</span></code>。</p>
+<p><code class="docutils literal"><span class="pre">AIUIMessage</span></code>定义如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">AIUIMessage</span>
+<span class="o">{</span>
+   <span class="kt">int</span> <span class="n">msgType</span><span class="o">;</span>   <span class="c1">//消息类型</span>
+   <span class="kt">int</span> <span class="n">arg1</span><span class="o">;</span>      <span class="c1">//参数1</span>
+   <span class="kt">int</span> <span class="n">arg2</span><span class="o">;</span>      <span class="c1">//参数2</span>
+   <span class="n">String</span> <span class="n">params</span><span class="o">;</span>
+   <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p class="last">AIUI定义了多种<code class="docutils literal"><span class="pre">AIUIMessage</span></code>，有不同的<code class="docutils literal"><span class="pre">msgType</span></code>。当<code class="docutils literal"><span class="pre">AIUIMessage</span></code>取不同的<code class="docutils literal"><span class="pre">msgType</span></code>时，
+其他成员有不同的定义，详细定义解释请见<a class="reference internal" href="05_aiuimessage.html#aiuimessage-label"><span class="std std-ref">AIUIMessage</span></a>的定义说明。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="aiui-sdk-deep-label">
+<span id="id3"></span><h2>4.1.3 理解<a class="headerlink" href="#aiui-sdk-deep-label" title="永久链接至标题">¶</a></h2>
+<p>AIUI旨在封装交互一切复杂性，为开发者提供简单易用的接口。</p>
+<p>AIUIServiceKit中提供的AIUIAgent就是和AIUIService交互的桥梁，通过发送不同的<code class="docutils literal"><span class="pre">AIUIMessage</span></code>控制AIUI的运行，
+AIUI通过<code class="docutils literal"><span class="pre">AIUIListener</span></code>将不同的<code class="docutils literal"><span class="pre">AIUIEvent</span></code>抛出来给开发者程序解析。</p>
+</div>
+<div class="section" id="aiui-servicekit-sdk-label">
+<span id="id4"></span><h2>4.1.4 调用流程<a class="headerlink" href="#aiui-servicekit-sdk-label" title="永久链接至标题">¶</a></h2>
+<p>AIUIServiceKit的一般调用流程如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">AIUIListener</span> <span class="n">listener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AIUIListener</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">AIUIEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">eventType</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="c1">//唤醒事件</span>
+                        <span class="k">case</span> <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">EVENT_WAKEUP</span><span class="o">:</span>
+                        <span class="o">{</span>
+                                <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                        <span class="c1">//结果事件（包含听写，语义，离线语法结果，定义和解析格式参见4.6 AIUIEvent一节）</span>
+                        <span class="k">case</span> <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">EVENT_RESULT</span><span class="o">:</span>
+                        <span class="o">{</span>
+                                <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                        <span class="c1">//休眠事件</span>
+                        <span class="k">case</span> <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">EVENT_SLEEP</span><span class="o">:</span>
+                        <span class="o">{</span>
+                                <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                        <span class="c1">//错误事件</span>
+                        <span class="k">case</span> <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">EVENT_ERROR</span><span class="o">:</span>
+                        <span class="o">{</span>
+                                <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="n">AIUIAgent</span> <span class="n">agent</span> <span class="o">=</span> <span class="n">AIUIAgent</span><span class="o">.</span><span class="na">createAgent</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">listener</span><span class="o">);</span>
+
+<span class="c1">//只是为了演示sendMessage的调用逻辑，放在此处并没有什么意义</span>
+<span class="c1">//agent.sendMessage(new AIUIMessage(AIUIConstant.CMD_RESET_WAKEUP, 0, 0, null, null);</span>
+</pre></div>
+</div>
+<p>具体的实现编码可以参考开发包中的AIUIDemo源码实现。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02_softcore.html" class="btn btn-neutral float-right" title="4.2 软核模式" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../chapters/04_develop.html" class="btn btn-neutral" title="4. 集成方式" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

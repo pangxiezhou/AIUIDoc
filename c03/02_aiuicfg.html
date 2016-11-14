@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.2 配置文件 &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="3. 准备" href="../chapters/03_prepare.html"/>
+        <link rel="next" title="3.3 AIUI配置Provider" href="03_aiuicfg_provider.html"/>
+        <link rel="prev" title="3.1 内部关系" href="01_relationship.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_relationship.html">3.1 内部关系</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 配置文件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">配置文件示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">配置字段说明</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_aiuicfg_provider.html">3.3 AIUI配置Provider</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/03_prepare.html">3. 准备</a> &raquo;</li>
+      
+    <li>3.2 配置文件</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c03/02_aiuicfg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiui-cfg-label">
+<span id="id1"></span><h1>3.2 配置文件<a class="headerlink" href="#aiui-cfg-label" title="永久链接至标题">¶</a></h1>
+<p>AIUI Service在启动时会读取配置，根据配置初始化各个内部模块。</p>
+<div class="section" id="id2">
+<h2>配置文件示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>AIUI的配置内容格式是json，配置了AIUI运行时各方面的参数:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/* AIUI参数设置 */</span>
+<span class="o">{</span>
+        <span class="cm">/* 语音云平台登录参数 */</span>
+        <span class="s">&quot;login&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;appid &quot;</span><span class="o">:</span><span class="s">&quot;xxxxxxxx&quot;</span><span class="o">,</span>
+                <span class="s">&quot;key &quot;</span><span class="o">:</span><span class="s">&quot;xxxxxxxx&quot;</span>
+        <span class="o">},</span>
+
+        <span class="cm">/* 场景设置 */</span>
+        <span class="s">&quot;global&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;scene&quot;</span><span class="o">:</span><span class="s">&quot;main&quot;</span>
+        <span class="o">},</span>
+
+        <span class="cm">/* 交互参数 */</span>
+        <span class="s">&quot;interact&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;interact_timeout&quot;</span><span class="o">:</span><span class="s">&quot;60000&quot;</span><span class="o">,</span>
+                <span class="s">&quot;result_timeout&quot;</span><span class="o">:</span><span class="s">&quot;5000&quot;</span>
+        <span class="o">},</span>
+
+        <span class="c1">// 离线语法识别参数</span>
+        <span class="s">&quot;asr&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;threshold&quot;</span><span class="o">:</span><span class="s">&quot;80&quot;</span><span class="o">,</span>
+                <span class="s">&quot;res_type&quot;</span><span class="o">:</span><span class="s">&quot;assets&quot;</span><span class="o">,</span>
+                <span class="s">&quot;res_path&quot;</span><span class="o">:</span><span class="s">&quot;asr/common.jet&quot;</span>
+        <span class="o">},</span>
+
+        <span class="c1">// 语音合成参数</span>
+        <span class="s">&quot;tts&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;res_type&quot;</span><span class="o">:</span><span class="s">&quot;assets&quot;</span><span class="o">,</span>
+                <span class="s">&quot;res_path&quot;</span><span class="o">:</span><span class="s">&quot;tts/common.jet;tts/mengmeng.jet&quot;</span><span class="o">,</span>
+                <span class="s">&quot;voice_name&quot;</span><span class="o">:</span><span class="s">&quot;mengmeng&quot;</span>
+        <span class="o">},</span>
+
+        <span class="c1">// 唤醒参数</span>
+        <span class="s">&quot;ivw&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;res_type&quot;</span><span class="o">:</span><span class="s">&quot;assets&quot;</span><span class="o">,</span>
+                <span class="s">&quot;res_path&quot;</span><span class="o">:</span><span class="s">&quot;ivw/ivw_resource.jet&quot;</span>
+        <span class="o">},</span>
+
+        <span class="c1">// 语音业务流程</span>
+        <span class="s">&quot;speech&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;intent_engine_type&quot;</span><span class="o">:</span><span class="s">&quot;mixed&quot;</span>
+        <span class="o">},</span>
+
+        <span class="cm">/* 硬件参数设置 */</span>
+        <span class="c1">// alsa录音参数</span>
+        <span class="s">&quot;alsa&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;sound_card&quot;</span><span class="o">:</span><span class="s">&quot;2&quot;</span><span class="o">,</span>
+                <span class="s">&quot;card_sample_rate&quot;</span><span class="o">:</span><span class="s">&quot;96000&quot;</span>
+        <span class="o">},</span>
+
+        <span class="cm">/* 日志设置 */</span>
+        <span class="s">&quot;log&quot;</span><span class="o">:{</span>
+                <span class="s">&quot;debug_log&quot;</span><span class="o">:</span><span class="s">&quot;1&quot;</span><span class="o">,</span>
+                <span class="s">&quot;save_datalog&quot;</span><span class="o">:</span><span class="s">&quot;1&quot;</span><span class="o">,</span>
+                <span class="s">&quot;datalog_path&quot;</span><span class="o">:</span><span class="s">&quot;&quot;</span><span class="o">,</span>
+                <span class="s">&quot;datalog_siz&quot;</span><span class="o">:</span><span class="mi">1024</span>
+        <span class="o">},</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>配置字段说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>对于各个字段的解释如下：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="18%" />
+<col width="18%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="2">参数类型</td>
+<td colspan="2">参数名称</td>
+</tr>
+<tr class="row-even"><td rowspan="2">login</td>
+<td rowspan="2">语音云登录参数</td>
+<td>appid</td>
+<td><div class="first last line-block">
+<div class="line">在讯飞开放平台上注册的8位应用唯一标识。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>key</td>
+<td><div class="first last line-block">
+<div class="line">appid校验串</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>global</td>
+<td>全局参数设置</td>
+<td>scene</td>
+<td><div class="first last line-block">
+<div class="line">用户定制的场景参数，不同的场景可对应不同的云端处理流程。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">interact</td>
+<td rowspan="2">交互参数</td>
+<td>interact_timeout</td>
+<td><div class="first last line-block">
+<div class="line"><strong>交互超时(单位：ms)</strong></div>
+<div class="line"><br /></div>
+<div class="line">即唤醒之后，如果在这段时间内无有效交互</div>
+<div class="line">(无有效结果返回)，则重新进入待唤醒状态，取值：[10000,180000)</div>
+<div class="line">默认为1min。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>result_timeout</td>
+<td><div class="first last line-block">
+<div class="line"><strong>结果超时（单位：ms）</strong></div>
+<div class="line"><br /></div>
+<div class="line">即检测到语音后端点后一段时间内</div>
+<div class="line">无结果返回则抛出超时错误。</div>
+<div class="line">默认值：5000。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">tts</td>
+<td rowspan="4">语音合成参数</td>
+<td>engine_type</td>
+<td><div class="first last line-block">
+<div class="line"><strong>引擎类型</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值：local（本地），cloud（云端）。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>res_type</td>
+<td><div class="first line-block">
+<div class="line"><strong>资源类型</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值
+*  assets资源（AIUIService.apk的assets文件），
+*  res资源（AIUIService.apk的res文件），
+*  path资源（sdcard文件）。</div>
+</div>
+<div class="last line-block">
+<div class="line">使用合成时必须设置。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>res_path</td>
+<td><div class="first last line-block">
+<div class="line"><strong>合成资源路径</strong></div>
+<div class="line"><br /></div>
+<div class="line">以“；”隔开，前面为合成共用资源，后面为发音人模型资源。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>voice_name</td>
+<td><div class="first last line-block">
+<div class="line"><strong>发音人名称</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">ivw</td>
+<td rowspan="2">语音唤醒参数</td>
+<td>res_path</td>
+<td><div class="first last line-block">
+<div class="line"><strong>资源类型</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值同tts参数res_type说明</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>res_path</td>
+<td><div class="first last line-block">
+<div class="line">唤醒资源文件路径，必须与res_type匹配。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">asr</td>
+<td rowspan="3">离线语法识别参数</td>
+<td><p class="first">threshold</p>
+<p class="last">res_type</p>
+</td>
+<td><div class="first last line-block">
+<div class="line"><strong>语法识别得分门限值</strong></div>
+<div class="line"><br /></div>
+<div class="line">只有当识别结果得分高于门限时才对外抛出。</div>
+<div class="line">取值：[0，100]，默认值：0。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>res_type</td>
+<td><div class="first last line-block">
+<div class="line">同ivw，使用离线语法时必须设置</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>res_path</td>
+<td><div class="first last line-block">
+<div class="line">离线识别资源路径，必须与res_type匹配。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>speech</td>
+<td>业务相关参数</td>
+<td>intent_engine_type</td>
+<td><div class="first last line-block">
+<div class="line"><strong>将语音转换成意图的引擎类型</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值：
+* cloud（云端语义）、
+* mixed（云端语义+本地语法混合模式），
+* local（本地语法识别）、</div>
+<div class="line">默认值：cloud。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">alsa</td>
+<td rowspan="2">alsa录音参数</td>
+<td>sound_card</td>
+<td><div class="first last line-block">
+<div class="line"><strong>声卡设备号</strong></div>
+<div class="line"><br /></div>
+<div class="line">请根据实际情况设置，在使用麦克风阵列时必须</div>
+<div class="line">设置正确的设备号。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>card_sample_rate</td>
+<td><div class="first last line-block">
+<div class="line"><strong>声卡采样率</strong></div>
+<div class="line"><br /></div>
+<div class="line">请根据实际情况设置，在使用麦克风阵列时必须</div>
+<div class="line">设置正确的采样率。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">log</td>
+<td rowspan="4">日志相关参数</td>
+<td>debug_log</td>
+<td><div class="first last line-block">
+<div class="line"><strong>Debug日志开关</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值：1（打开），0（关闭），默认值：0。</div>
+<div class="line">日志打开时会向logcat打印调试日志。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>save_datalog</td>
+<td><div class="first last line-block">
+<div class="line"><strong>是否保存数据日志</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值：1（打开），0（关闭），默认值：0。</div>
+<div class="line">打开之后，会将所有上传到云端的音频和云端返回的结果保存到本地</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>datalog_path</td>
+<td><div class="first last line-block">
+<div class="line"><strong>数据日志的保存路径</strong></div>
+<div class="line"><br /></div>
+<div class="line">当不设置或者为空值时，使用默认值：“/sdcard/AIUI/data/”</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>datalog_size</td>
+<td><div class="first last line-block">
+<div class="line"><strong>数据日志的大小限制（单位：MB）</strong></div>
+<div class="line"><br /></div>
+<div class="line">取值：[-1，+∞)</div>
+<div class="line">默认值：-1（表示无大小限制）。</div>
+<div class="line">注意：设置成-1可能会造成SD卡被日志写满，从来导致AIUI</div>
+<div class="line">Service性能下降，影响体验效果。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03_aiuicfg_provider.html" class="btn btn-neutral float-right" title="3.3 AIUI配置Provider" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01_relationship.html" class="btn btn-neutral" title="3.1 内部关系" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.3 自定义数据 &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="8. 串口" href="../chapters/8_uart.html"/>
+        <link rel="next" title="8.4 串口工装测试" href="04_factorytest.html"/>
+        <link rel="prev" title="8.2 串口协议Android实现参考" href="02_uart_android.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_protocal.html">8.1 AIUI串口协议</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_uart_android.html">8.2 串口协议Android实现参考</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.3 自定义数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">8.3.1 消息定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">8.3.2 基本流程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">8.3.3 细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">8.3.4 代码示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_factorytest.html">8.4 串口工装测试</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/8_uart.html">8. 串口</a> &raquo;</li>
+      
+    <li>8.3 自定义数据</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c08/03_custom.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>8.3 自定义数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>串口通信格式中定义了网络，配置，控制，接收几类消息，这些消息大部分格式是json文本，
+接收的AIUI消息的格式还是gzip压缩，对于性能较弱的机器如单片机来说，这些消息根本无法解析。</p>
+<p>所以在串口通信格式中加入自定义数据类型，以扩展现有串口的适用性。</p>
+<div class="section" id="id2">
+<h2>8.3.1 消息定义<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="9%" />
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+<col width="9%" />
+<col width="27%" />
+<col width="14%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>分类</td>
+<td>同步头</td>
+<td>用户ID</td>
+<td>消息类型</td>
+<td>消息长度</td>
+<td>消息ID</td>
+<td>消息数据</td>
+<td>校检码</td>
+</tr>
+<tr class="row-even"><td rowspan="2">自定义消息</td>
+<td rowspan="2">0xA5</td>
+<td rowspan="2">0x01</td>
+<td rowspan="2">0x2A</td>
+<td rowspan="2">见附注</td>
+<td rowspan="2">见附注</td>
+<td rowspan="2">自定义消息</td>
+<td rowspan="2">见附注</td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>8.3.2 基本流程<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>自定义数据的基本工作流程是这样的：</p>
+<ol class="arabic simple">
+<li>AIUI上开发者的Android应用发送含数据的特定广播，AIUI会把数据通过串口发送给上位机。</li>
+<li>上位机也可以发送自定义类型数据，AIUI会发送一个带自定义数据的广播，AIUI上开发者的Android应用可以接收处理。</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>8.3.3 细节<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>对应上述流程，分别对应如下广播：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">com.iflytek.aiui.devboard.action.SEND_CUSTOM_DATA</span></code></li>
+<li><code class="docutils literal"><span class="pre">com.iflytek.aiui.devboard.action.RECEIVE_CUSTOM_DATA</span></code></li>
+</ol>
+<p>intent中包含自定义数据的类型为<code class="docutils literal"><span class="pre">bytearray</span></code>,key为custom_data。</p>
+</div>
+<div class="section" id="id5">
+<h2>8.3.4 代码示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>接收发送自定义消息的Receiver:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">CustomDataReceiver</span> <span class="kd">extends</span> <span class="n">BroadcastReceiver</span><span class="o">{</span>
+
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACTION_SEND_CUSTOM_DATA</span> <span class="o">=</span> <span class="s">&quot;com.iflytek.aiui.devboard.action.SEND_CUSTOM_DATA&quot;</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">CUSTOM_DATA_KEY</span> <span class="o">=</span> <span class="s">&quot;custom_data&quot;</span><span class="o">;</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">customData</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getByteArrayExtra</span><span class="o">(</span><span class="n">CUSTOM_DATA_KEY</span><span class="o">);</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;CustomDataReceiver&quot;</span><span class="o">,</span> <span class="s">&quot;recv custom data &quot;</span> <span class="o">+</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">customData</span><span class="o">));</span>
+
+                <span class="n">Intent</span> <span class="n">respAck</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">ACTION_SEND_CUSTOM_DATA</span><span class="o">);</span>
+                <span class="n">respAck</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">CUSTOM_DATA_KEY</span><span class="o">,</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[]{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">8</span><span class="o">});</span>
+                <span class="n">context</span><span class="o">.</span><span class="na">sendBroadcast</span><span class="o">(</span><span class="n">respAck</span><span class="o">);</span>
+
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>在manifest中注册如下</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">&quot;com.example.uartcustomdata.CustomDataReceiver&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;intent-filter&gt;</span>
+                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;com.iflytek.aiui.devboard.action.RECEIVE_CUSTOM_DATA&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04_factorytest.html" class="btn btn-neutral float-right" title="8.4 串口工装测试" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02_uart_android.html" class="btn btn-neutral" title="8.2 串口协议Android实现参考" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

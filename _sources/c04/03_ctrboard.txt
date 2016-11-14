@@ -1,0 +1,54 @@
+.. _ctrboard-label:
+
+4.3 上位机模式
+--------------
+
+适用：上位机和AIUI模块通过串口通信，适用于有屏幕需求或硬件扩展的要求（如机器人，智能家居等）
+
+4.3.1 结构
+^^^^^^^^^^^
+
+.. image:: ctrboard.png
+
+ControlService充当AIUIService和上位机之间的中介，一面负责将AIUI的结果通过串口发送给上位机，一面将上位机通过串口发送的指令发送到AIUI。
+
+AIUIProductDemo是个可选的选项，因为如果在上位机上对结果进行解析播放，那么AIUI模块上的AIUIProductDemo的播报就不必要了。
+
+上位机模式和核心板模式在开放集成时有诸多\ :ref:`类似之处 <uart_sdk-label>`。
+
+4.3.2 串口协议及数据定义
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+参见\ :ref:`uart_protocal-label`\ 。
+
+4.3.4 调用流程
+^^^^^^^^^^^^^^
+
+根据\ :ref:`uart_protocal-label`\ ，在\ :ref:`开发包 <develop_kit-lable>`\ 中有\ :ref:`串口协议Android SDK <uart_android-label>`\ 的实现。
+
+上位机开发调用流程可以参考该SDK的\ :ref:`代码示例 <uart_android_code-label>`\ 。
+
+完整流程参考\ :ref:`开发包 <develop_kit-lable>`\ 中UART下的UARTKitCtrDemo源码。
+
+其实流程简单一点理解就是通过串口收发AIUI消息，获取结果和控制AIUI，与\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类似。
+
+4.4.4 其他平台
+^^^^^^^^^^^^^^
+
+如果上位机是Android的话，那上位机集成开发包中串口SDK UARTKit就能很方便的开发。
+
+如果上位机是其他平台，可以先通过\ `AIUI串口历险记 <http://bbs.xfyun.cn/forum.php?mod=viewthread&tid=17728&extra=page%3D1>`_\ 熟悉AIUI
+串口协议的一些具体内容，再参考\ :ref:`串口Android SDK的示例 <uart_android_code-label>`\ 熟悉处理流程。
+		
+
+		
+
+		
+
+		
+		
+
+
+
+
+

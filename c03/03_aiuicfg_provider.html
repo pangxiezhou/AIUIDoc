@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3 AIUI配置Provider &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="3. 准备" href="../chapters/03_prepare.html"/>
+        <link rel="next" title="4. 集成方式" href="../chapters/04_develop.html"/>
+        <link rel="prev" title="3.2 配置文件" href="02_aiuicfg.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_relationship.html">3.1 内部关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_aiuicfg.html">3.2 配置文件</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 AIUI配置Provider</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/03_prepare.html">3. 准备</a> &raquo;</li>
+      
+    <li>3.3 AIUI配置Provider</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c03/03_aiuicfg_provider.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiuiprovider">
+<h1>3.3 AIUI配置Provider<a class="headerlink" href="#aiuiprovider" title="永久链接至标题">¶</a></h1>
+<p>AIUI Service通过<code class="docutils literal"><span class="pre">android:authorities=&quot;com.iflytek.aiui.cfg.provider&quot;</span></code>的ContentProvider读取配置，配置文件的格式和字段说明在3.2节有详细的说明。</p>
+<p>ControlService中实现的提供AIUI配置的ContentProvider简略代码如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AIUIConfigProvider</span> <span class="kd">extends</span> <span class="n">ContentProvider</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">&quot;AIUIConfigProvider&quot;</span><span class="o">;</span>
+
+
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">call</span><span class="o">(</span><span class="n">String</span> <span class="n">method</span><span class="o">,</span> <span class="n">String</span> <span class="n">arg</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="s">&quot;readAIUICfg&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">method</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">String</span> <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigUtil</span><span class="o">.</span><span class="na">readSdcardCfg</span><span class="o">(</span><span class="n">ServiceConstant</span><span class="o">.</span><span class="na">SDCARD_AIUI_CFG_PATH</span><span class="o">);</span>
+                        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+
+                        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&quot;config&quot;</span><span class="o">,</span> <span class="n">config</span><span class="o">);</span>
+
+                        <span class="k">return</span> <span class="n">bundle</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">call</span><span class="o">(</span><span class="n">method</span><span class="o">,</span> <span class="n">arg</span><span class="o">,</span> <span class="n">extras</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Manifest中注册信息如下source:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span> <span class="o">&lt;!--</span> <span class="n">AIUI配置provider</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">provider</span>
+    <span class="n">android</span><span class="o">:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;com.iflytek.aiui.devboard.controlservice.provider.AIUIConfigProvider&quot;</span>
+    <span class="n">android</span><span class="o">:</span><span class="n">authorities</span><span class="o">=</span><span class="s">&quot;com.iflytek.aiui.cfg.provider&quot;</span>
+    <span class="n">android</span><span class="o">:</span><span class="n">exported</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+    <span class="n">android</span><span class="o">:</span><span class="n">multiprocess</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">provider</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>如上的配置可以参考开发包中AIUIDemo中<code class="docutils literal"><span class="pre">AIUIConfigProvider.java</span></code> 的实现。</p>
+<p>评估板控制端ControlClient配置的appid和key就是通过tcp发送给ControlService，ControlService再通过如上的ContentProvider提供给AIUI Service。</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chapters/04_develop.html" class="btn btn-neutral float-right" title="4. 集成方式" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02_aiuicfg.html" class="btn btn-neutral" title="3.2 配置文件" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

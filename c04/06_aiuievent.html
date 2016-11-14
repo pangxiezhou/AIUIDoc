@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.6 AIUIEvent &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="4. 集成方式" href="../chapters/04_develop.html"/>
+        <link rel="next" title="4.7 AIUI错误码" href="07_errorcode.html"/>
+        <link rel="prev" title="4.4 AIUIMessage" href="05_aiuimessage.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_coreboard.html">4.1 核心板模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_softcore.html">4.2 软核模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_ctrboard.html">4.3 上位机模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_uart&amp;sdk.html">4.4 串口和SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_aiuimessage.html">4.4 AIUIMessage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6 AIUIEvent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.6.1 定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-result">4.6.2 EVENT_RESULT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.6.3 AIUIEvent解析处理</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="07_errorcode.html">4.7 AIUI错误码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/04_develop.html">4. 集成方式</a> &raquo;</li>
+      
+    <li>4.6 AIUIEvent</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c04/06_aiuievent.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiuievent">
+<span id="aiuievent-label"></span><h1>4.6 AIUIEvent<a class="headerlink" href="#aiuievent" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>4.6.1 定义<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>AIUIEvent的字段定义参见<a class="reference internal" href="01_coreboard.html#aiui-event-def-label"><span class="std std-ref">AIUIEvent定义</span></a>。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="6%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>eventType(事件类型)</td>
+<td>取值</td>
+<td><div class="first last line-block">
+<div class="line">说明</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>EVENT_RESULT</td>
+<td>1</td>
+<td><div class="first last line-block">
+<div class="line"><strong>结果事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">data字段携带结果数据，info字段为描述数据的JSON字符串。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>EVENT_ERROR</td>
+<td>2</td>
+<td><div class="first last line-block">
+<div class="line"><strong>出错事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">arg1字段为错误码，info字段为错误描述信息。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>EVENT_STATE</td>
+<td>3</td>
+<td><div class="first last line-block">
+<div class="line"><strong>服务状态事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">当向AIUI发送CMD_GET_STATE命令时抛出该事件，</div>
+<div class="line">arg1字段取值为STATE_IDLE（空闲状态）、</div>
+<div class="line">STATE_READY（就绪状态，待唤醒）、</div>
+<div class="line">STATE_WORKING（工作状态，已唤醒）状态之一。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>EVENT_WAKEUP</td>
+<td>4</td>
+<td><div class="first last line-block">
+<div class="line"><strong>唤醒事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">info字段为唤醒结果JSON字符串，具体格式见<a class="reference internal" href="../c05/01_wakeup.html#wakeup-label"><span class="std std-ref">5.1 唤醒</span></a>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>EVENT_SLEEP</td>
+<td>5</td>
+<td><div class="first last line-block">
+<div class="line"><strong>休眠事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">当出现交互超时，服务会进入休眠状态（待唤醒），</div>
+<div class="line">或者发送了CMD_RESET_WAKEUP时，抛出该事件。</div>
+<div class="line">arg1字段取值：TYPE_AUTO（自动休眠，即交互超时）、</div>
+<div class="line">TYPE_COMPEL(外部强制休眠，即发送CMD_RESET_WAKEUP)。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>EVENT_VAD</td>
+<td>6</td>
+<td><div class="first last line-block">
+<div class="line"><strong>VAD事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">当检测到输入音频的前端点后，会抛出该事件，</div>
+<div class="line">用arg1标识前后端点或者音量信息:0(前端点)、1(音量)、2(后端点)。</div>
+<div class="line">当arg1取值为1时，arg2为音量大小。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>EVENT_CMD_RETURN</td>
+<td>8</td>
+<td><div class="first last line-block">
+<div class="line"><strong>某条CMD命令对应的返回事件</strong></div>
+<div class="line"><br /></div>
+<div class="line">对于除CMD_GET_STATE外的有返回的命令，都会返回该事件，</div>
+<div class="line">用arg1标识对应的CMD命令，arg2为返回值，0表示成功，</div>
+<div class="line">info字段为描述信息。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-result">
+<h2>4.6.2 EVENT_RESULT<a class="headerlink" href="#event-result" title="永久链接至标题">¶</a></h2>
+<p>看完定义列表之后，你可能会觉得大多数<code class="docutils literal"><span class="pre">eventType</span></code>类型都见字知义，对于EVENT_RESULT的解释还是简单些。
+的确EVENT_RESULT是AIUIEvent中最重要的消息类型，处理解析的结果都在EVENT_RESULT中，
+所以需要单独一节<a class="reference internal" href="../chapters/06_iat_nlp.html#event-result-label"><span class="std std-ref">AIUI结果</span></a>解释它。</p>
+</div>
+<div class="section" id="id2">
+<h2>4.6.3 AIUIEvent解析处理<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>核心板模式AIUISericeKit SDK对<code class="docutils literal"><span class="pre">AIUIEvent</span></code>的处理参见<a class="reference internal" href="01_coreboard.html#aiui-servicekit-sdk-label"><span class="std std-ref">AIUIEvent解析</span></a>。</p>
+<p>上位机模式串口解析参见<a class="reference internal" href="04_uart&amp;sdk.html#aiuievent-uart-relation-label"><span class="std std-ref">AIUIEvent与串口消息的对应关系</span></a>。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="07_errorcode.html" class="btn btn-neutral float-right" title="4.7 AIUI错误码" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="05_aiuimessage.html" class="btn btn-neutral" title="4.4 AIUIMessage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
