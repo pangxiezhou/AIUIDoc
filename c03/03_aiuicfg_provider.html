@@ -190,8 +190,14 @@
 <p>评估板控制端ControlClient配置的appid和key就是通过tcp发送给ControlService，ControlService再通过如上的ContentProvider提供给AIUI Service。</p>
 <div class="section" id="id1">
 <h2>3.3.1 注意事项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>谁定义了配置的contentprovider，就读谁的配置。</p>
+<p>谁定义了配置的ContentProvider，就读取谁的配置。</p>
 <p>ControlService和AIUIDemo都定义了相同的ContentProvider，这是不能同时安装的原因。</p>
+<dl class="docutils">
+<dt>ControlService:</dt>
+<dd>配置文件位于/sdcard/AIUI/cfg/aiui.cfg</dd>
+<dt>AIUIDemo:</dt>
+<dd>配置文件位于工程assets/cfg/aiui.cfg下</dd>
+</dl>
 <p>/sdcard/AIUI/cfg/aiui.cfg配置文件由ControlService管理，如果ControlServie被卸载后，这个配置文件就没用了。</p>
 </div>
 </div>

@@ -29,7 +29,7 @@ AIUI默认的发音人是离线的发音人萌萌::
 
    ``adb push xxxxxx.jet /sdcard/AIUI/xxxxxxxx.jet`` 
 
-3. 通过修改配置文件中如下项::
+3. 通过修改\ :ref:`配置文件 <aiui_cfg_label>`\ 中如下项::
 
 	//合成参数
 	"tts":{

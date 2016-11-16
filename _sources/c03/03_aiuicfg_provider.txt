@@ -44,9 +44,16 @@ Manifest中注册信息如下source::
 3.3.1 注意事项
 ^^^^^^^^^^^^^^
 
-谁定义了配置的contentprovider，就读谁的配置。
+谁定义了配置的ContentProvider，就读取谁的配置。
 
 ControlService和AIUIDemo都定义了相同的ContentProvider，这是不能同时安装的原因。
+
+ControlService:
+	配置文件位于/sdcard/AIUI/cfg/aiui.cfg
+	
+AIUIDemo:
+	配置文件位于工程assets/cfg/aiui.cfg下
+
 
 /sdcard/AIUI/cfg/aiui.cfg配置文件由ControlService管理，如果ControlServie被卸载后，这个配置文件就没用了。
 
