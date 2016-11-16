@@ -10,7 +10,7 @@ AIUI模块在出厂前就会进行工装测试，测试录播音，串口及WIFI
 
 2. 外部播音同时构造如下消息放入主控消息（参见\ :ref:`串口通信格式 <uart_control_msg-label>`\ 中主控消息）发送给AIUI:
 
-	* 录音测试::
+	* 录音测试(\ :download:`录音测试播音文件 <rec.pcm>`\ )::
 		
 			{
 				"type": "factory_test",
@@ -20,7 +20,7 @@ AIUI模块在出厂前就会进行工装测试，测试录播音，串口及WIFI
 				}
 			}
 
-	* 截幅测试::
+	* 截幅测试(\ :download:`截幅测试播音文件 <vibration.wav>`\ )::
 		
 			{
 				"type": "factory_test",
