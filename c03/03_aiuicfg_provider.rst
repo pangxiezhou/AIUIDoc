@@ -1,7 +1,7 @@
 3.3 AIUI配置Provider
 ---------------------
 
-AIUI Service通过\ ``android:authorities="com.iflytek.aiui.cfg.provider"``\ 的ContentProvider读取配置，配置文件的格式和字段说明在3.2节有详细的说明。
+AIUI Service通过\ ``android:authorities="com.iflytek.aiui.cfg.provider"``\ 的ContentProvider读取配置，配置文件的格式和字段说明在\ :ref:`aiui_cfg_label`\ 有详细的说明。
 
 ControlService中实现的提供AIUI配置的ContentProvider简略代码如下::
 
