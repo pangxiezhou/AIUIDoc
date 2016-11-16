@@ -91,7 +91,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_relationship.html">3.1 内部关系</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_aiuicfg.html">3.2 配置文件</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 AIUI配置Provider</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 AIUI配置Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.3.1 注意事项</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
@@ -158,6 +161,7 @@
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">call</span><span class="o">(</span><span class="n">String</span> <span class="n">method</span><span class="o">,</span> <span class="n">String</span> <span class="n">arg</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
                 <span class="k">if</span> <span class="o">(</span><span class="s">&quot;readAIUICfg&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">method</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="c1">///sdcard/AIUI/cfg/aiui.cfg配置文件由ControlService管理的，ControlService被卸载后，该配置文件就没用了</span>
                         <span class="n">String</span> <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigUtil</span><span class="o">.</span><span class="na">readSdcardCfg</span><span class="o">(</span><span class="n">ServiceConstant</span><span class="o">.</span><span class="na">SDCARD_AIUI_CFG_PATH</span><span class="o">);</span>
                         <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
 
@@ -184,6 +188,12 @@
 </div>
 <p>如上的配置可以参考开发包中AIUIDemo中<code class="docutils literal"><span class="pre">AIUIConfigProvider.java</span></code> 的实现。</p>
 <p>评估板控制端ControlClient配置的appid和key就是通过tcp发送给ControlService，ControlService再通过如上的ContentProvider提供给AIUI Service。</p>
+<div class="section" id="id1">
+<h2>3.3.1 注意事项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>谁定义了配置的contentprovider，就读谁的配置。</p>
+<p>ControlService和AIUIDemo都定义了相同的ContentProvider，这是不能同时安装的原因。</p>
+<p>/sdcard/AIUI/cfg/aiui.cfg配置文件由ControlService管理，如果ControlServie被卸载后，这个配置文件就没用了。</p>
+</div>
 </div>
 
 
