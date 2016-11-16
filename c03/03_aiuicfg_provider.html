@@ -151,7 +151,7 @@
             
   <div class="section" id="aiuiprovider">
 <h1>3.3 AIUI配置Provider<a class="headerlink" href="#aiuiprovider" title="永久链接至标题">¶</a></h1>
-<p>AIUI Service通过<code class="docutils literal"><span class="pre">android:authorities=&quot;com.iflytek.aiui.cfg.provider&quot;</span></code>的ContentProvider读取配置，配置文件的格式和字段说明在3.2节有详细的说明。</p>
+<p>AIUI Service通过<code class="docutils literal"><span class="pre">android:authorities=&quot;com.iflytek.aiui.cfg.provider&quot;</span></code>的ContentProvider读取配置，配置文件的格式和字段说明在<a class="reference internal" href="02_aiuicfg.html#aiui-cfg-label"><span class="std std-ref">3.2 配置文件</span></a>有详细的说明。</p>
 <p>ControlService中实现的提供AIUI配置的ContentProvider简略代码如下:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AIUIConfigProvider</span> <span class="kd">extends</span> <span class="n">ContentProvider</span> <span class="o">{</span>
         <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">&quot;AIUIConfigProvider&quot;</span><span class="o">;</span>
