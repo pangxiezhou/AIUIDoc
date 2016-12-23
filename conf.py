@@ -30,6 +30,22 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
+sphinxmark_enable = True
+sphinxmark_div = 'document'
+sphinxmark_image = 'text'
+sphinxmark_text = 'iFLYTEK'
+sphinxmark_text_size = 150
+sphinxmark_text_spacing = 600
+sphinxmark_text_rotation = 45
+sphinxmark_text_color = (85, 87, 91)
+
+html_context = {
+  'css_files': [
+    '_static/sphinxmark.css',  # watermark styling
+    ],
+  }
+
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
@@ -41,6 +57,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
 	'sphinx.ext.githubpages',
+	'sphinxmark',
 ]
 
 
@@ -72,7 +89,7 @@ author = 'AIUI'
 # built documents.
 #
 # The short X.Y version.
-version = 'latest'
+version = '1023'
 # The full version, including alpha/beta/rc tags.
 release = '1023'
 
