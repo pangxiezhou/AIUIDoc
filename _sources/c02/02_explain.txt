@@ -7,6 +7,7 @@ ControlClient位于开发包bin目录下。
 
 .. _demoboard_relationship-label:
 
+
 运行位置和关系如下：
 
 .. image:: demoboard.png

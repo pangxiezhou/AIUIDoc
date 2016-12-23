@@ -122,6 +122,7 @@
 <li class="toctree-l2"><a class="reference internal" href="02_uart_android.html">8.2 串口协议Android实现参考</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_custom.html">8.3 自定义数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_factorytest.html">8.4 串口工装测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_uart_QA.html">8.5 常见问题</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
@@ -429,6 +430,8 @@
 <dt><strong>消息长度：</strong></dt>
 <dd>数据格式中3~4字节为消息数据长度，消息长度编码为小端模式，即第3字节存储低字节，第4字节存储高字节。
 如握手请求消息中消息数据有4字节，则消息长度为4，编码到3~4字节就是0x04 0x00</dd>
+</dl>
+<dl class="docutils" id="uart-msg-id-label">
 <dt><strong>消息ID：</strong></dt>
 <dd>数据格式中5~6字节为消息ID，与消息长度类似，也是小端模式编码。
 可以使用消息ID过滤因超时重发导致的重复消息。两字节长度的消息ID取值0-65535，所以在实际使用中需要循环使用，具体实现可以参考Android平台上 的源码实现。</dd>
@@ -544,7 +547,7 @@ AIUI消息格式中的数据采用GZIP压缩格式，压缩前的编码格式也
         <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;tts&quot;</span><span class="o">,</span>
         <span class="s">&quot;content&quot;</span><span class="o">:</span> <span class="o">{</span>
                 <span class="s">&quot;action&quot;</span><span class="o">:</span> <span class="s">&quot;start&quot;</span><span class="o">,</span>  <span class="c1">//开始合成</span>
-                <span class="s">&quot;text&quot;</span><span class="o">:</span> <span class="s">&quot;xxx&quot;</span>       <span class="c1">//需要合成播放的文本</span>
+                <span class="s">&quot;text&quot;</span><span class="o">:</span> <span class="s">&quot;xxx&quot;</span>       <span class="c1">//需要合成播放的文本(注意文本的编码格式要为utf-8)</span>
         <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>

@@ -104,6 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="04_factorytest.html">8.4 串口工装测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_uart_QA.html">8.5 常见问题</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
@@ -153,8 +154,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>8.3 自定义数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="uart-custome-label">
+<span id="id1"></span><h1>8.3 自定义数据<a class="headerlink" href="#uart-custome-label" title="永久链接至标题">¶</a></h1>
 <p>串口通信格式中定义了网络，配置，控制，接收几类消息，这些消息大部分格式是json文本，
 接收的AIUI消息的格式还是gzip压缩，对于性能较弱的机器如单片机来说，这些消息根本无法解析。</p>
 <p>所以在串口通信格式中加入自定义数据类型，以扩展现有串口的适用性。</p>
