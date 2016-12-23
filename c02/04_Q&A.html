@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/sphinxmark.css" type="text/css" />
+  
 
   
         <link rel="index" title="索引"
@@ -64,7 +66,7 @@
             
             
               <div class="version">
-                latest
+                1023
               </div>
             
           
@@ -96,11 +98,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_msg&amp;event.html">5. Message和Event</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_wakeup_tts.html">6. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_iat_nlp.html">7. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/08_offline_cmd.html">8. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/09_uart.html">9. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/10_debug.html">10. AIUI调试</a></li>
 </ul>
 
             
@@ -169,7 +172,7 @@
 <div>A： 先用手机建立热点测试，是否可以搜索到AIUI设备，如果可以搜索到，那说明原WIFI的设置有问题。</div></blockquote>
 <p>Q：手机评估板客户端上的出错错误码是什么意思，比如10120 ？</p>
 <blockquote>
-<div><p>A：AIUI的错误码在<a class="reference internal" href="../c04/07_errorcode.html#error-code-label"><span class="std std-ref">AIUI错误码</span></a>中附录 错误码一节有详细说明。</p>
+<div><p>A：AIUI的错误码在<a class="reference internal" href="../c05/03_errorcode.html#error-code-label"><span class="std std-ref">AIUI错误码</span></a>中附录 错误码一节有详细说明。</p>
 <dl class="docutils">
 <dt>10120</dt>
 <dd>结果等待超时，多数是网络原因造成。</dd>
@@ -187,10 +190,10 @@
 <div>A：确定手机端ControlClient配置中 是否启动AIUI后处理程序 是否已勾选。</div></blockquote>
 <p>Q：AIUI交互过程中的识别音频保存？</p>
 <blockquote>
-<div>A：参见<a class="reference internal" href="../c09/02_record_raw.html#audio-save-label"><span class="std std-ref">9.2 音频保存</span></a>。</div></blockquote>
+<div>A：参见<a class="reference internal" href="../c10/02_record_raw.html#audio-save-label"><span class="std std-ref">10.2 音频保存</span></a>。</div></blockquote>
 <p>Q：发音人或者唤醒的资源怎么替换？</p>
 <blockquote>
-<div>A：参见<a class="reference internal" href="../chapters/05_wakeup_tts.html#wakeup-tts-label"><span class="std std-ref">5. 唤醒和合成</span></a>。</div></blockquote>
+<div>A：参见<a class="reference internal" href="../chapters/06_wakeup_tts.html#wakeup-tts-label"><span class="std std-ref">6. 唤醒和合成</span></a>。</div></blockquote>
 <p>Q：合成资源替换了，唤醒还是萌萌的声音?</p>
 <blockquote>
 <div>A：目前处理唤醒为了更好的体验效果，播放的是录制好的音频，而不是合成的声音。所以换了合成资源，只会影响后面交互的合成播放。</div></blockquote>
@@ -206,7 +209,7 @@
 <div>A：参见<a class="reference internal" href="../c03/02_aiuicfg.html#aiui-cfg-label"><span class="std std-ref">3.2 配置文件</span></a>中交互参数<cite>interact_timeout</cite>的修改。</div></blockquote>
 <p>Q: 设置拾音波束是干嘛用的?</p>
 <blockquote>
-<div>A: 设置拾音方向的功能是考虑机器人在移动时，导致后面的交互可能与先前唤醒的角度不一致，导致拾音效果不好的情况提供的。<a class="reference internal" href="../c04/05_aiuimessage.html#aiuimessage-label"><span class="std std-ref">AIUIMessage</span></a>中CMD_SET_BEAM设置，arg1表示设置的拾音波束号。不同类型麦克风的拾音波束号参见《麦克风设计参考》。</div></blockquote>
+<div>A: 设置拾音方向的功能是考虑机器人在移动时，导致后面的交互可能与先前唤醒的角度不一致，导致拾音效果不好的情况提供的。<a class="reference internal" href="../c05/01_aiuimessage.html#aiuimessage-label"><span class="std std-ref">AIUIMessage</span></a>中CMD_SET_BEAM设置，arg1表示设置的拾音波束号。不同类型麦克风的拾音波束号参见《麦克风设计参考》。</div></blockquote>
 <p>Q: 我购买的多个开发板可以用同一个appid吗？</p>
 <blockquote>
 <div>A：可以。一个APPID跟一个产品对应，一个APPID可以对应多个设备。</div></blockquote>

@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.1 AIUIMessage &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="5. Message和Event" href="../chapters/05_msg&amp;event.html"/>
+        <link rel="next" title="5.2 AIUIEvent" href="02_aiuievent.html"/>
+        <link rel="prev" title="5. Message和Event" href="../chapters/05_msg&amp;event.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1023
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/05_msg&amp;event.html">5. Message和Event</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1 AIUIMessage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#msgtype">5.1.1 msgType定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.1.2 构造发送</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_aiuievent.html">5.2 AIUIEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_errorcode.html">5.3 AIUI错误码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_wakeup_tts.html">6. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_iat_nlp.html">7. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/08_offline_cmd.html">8. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/09_uart.html">9. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/10_debug.html">10. AIUI调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/05_msg&amp;event.html">5. Message和Event</a> &raquo;</li>
+      
+    <li>5.1 AIUIMessage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c05/01_aiuimessage.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiuimessage">
+<span id="aiuimessage-label"></span><h1>5.1 AIUIMessage<a class="headerlink" href="#aiuimessage" title="永久链接至标题">¶</a></h1>
+<div class="section" id="msgtype">
+<h2>5.1.1 msgType定义<a class="headerlink" href="#msgtype" title="永久链接至标题">¶</a></h2>
+<p><strong>注意： CMD_WAKEUP是用于手动唤醒，不能用于频繁的唤醒以延长交互时间，否则我们会停止AIUI的服务。</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="7%" />
+<col width="5%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>msgType（消息类型）</td>
+<td>取值</td>
+<td>返回</td>
+<td><div class="first last line-block">
+<div class="line">说明</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_GET_STATE</td>
+<td>1</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><strong>获取服务状态</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_RESET</td>
+<td>4</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>重置AIUI服务的状态</strong></div>
+<div class="line"><br /></div>
+<div class="line">服务会立即停止并重新启动，进入到待唤醒状态。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_START</td>
+<td>5</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>启动AIUI服务</strong></div>
+<div class="line"><br /></div>
+<div class="line">当AIUI服务停止后，使用此命令启动服务。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_STOP</td>
+<td>6</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>停止AIUI服务</strong></div>
+<div class="line"><br /></div>
+<div class="line">服务停止之后，将不响应外部输入。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_WAKEUP</td>
+<td>7</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line">唤醒消息。</div>
+<div class="line"><br /></div>
+<div class="line">用于手动唤醒AIUI服务，arg1为唤醒后拾音的波束号，默认为0。</div>
+<div class="line">关于波束的定义参见<a class="reference download internal" href="../_downloads/麦克风设计参考V0.8.pdf" download=""><code class="xref download docutils literal"><span class="pre">麦克风设计参考</span></code></a>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_RESET_WAKEUP</td>
+<td>8</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>重置唤醒状态</strong></div>
+<div class="line"><br /></div>
+<div class="line">AIUI服务重置为待唤醒状态。若当前为唤醒状态，</div>
+<div class="line">发送该消息重置后会抛出EVENT_SLEEP事件。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_SET_BEAM</td>
+<td>9</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line">设置麦克风阵列的拾音波束，用arg1携带拾音波束号。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_SET_PARAMS</td>
+<td>10</td>
+<td>无</td>
+<td><div class="first line-block">
+<div class="line"><strong>设置参数配置</strong></div>
+<div class="line"><br /></div>
+<div class="line">用params携带参数设置JSON字符串，</div>
+<div class="line">具体格式参照aiui.cfg文件。</div>
+<div class="line">暂时只可以用来修改scene参数，实时生效。</div>
+</div>
+<blockquote class="last">
+<div><p>示例:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s">&quot;global&quot;</span><span class="o">:{</span>
+     <span class="s">&quot;scene&quot;</span><span class="o">:</span><span class="s">&quot;main&quot;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_UPLOAD_LEXICON</td>
+<td>11</td>
+<td>有</td>
+<td><div class="first line-block">
+<div class="line"><strong>上传用户词表</strong></div>
+<div class="line"><br /></div>
+<div class="line">将用户词表按格式组成JSON字符串， 放在params字段传入SDK。</div>
+</div>
+<blockquote class="last">
+<div><p>具体格式:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+   <span class="s">&quot;name&quot;</span><span class="o">:</span><span class="s">&quot;userword&quot;</span><span class="o">,</span>
+   <span class="s">&quot;content&quot;</span><span class="o">:</span><span class="s">&quot;XXXX&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>其中XXXX也为一个JSON字符串，示例:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s">&quot;userword&quot;</span><span class="o">:</span> <span class="o">[{</span>
+           <span class="s">&quot;name&quot;</span><span class="o">:</span> <span class="s">&quot;我的常用词&quot;</span><span class="o">,</span>
+           <span class="s">&quot;words&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s">&quot;佳晨实业&quot;</span><span class="o">,</span>
+           <span class="s">&quot;蜀南庭苑&quot;</span><span class="o">,</span>
+           <span class="s">&quot;高兰路&quot;</span><span class="o">,</span>
+           <span class="s">&quot;复联二&quot;</span><span class="o">]</span>
+       <span class="o">},</span>
+       <span class="o">{</span>
+           <span class="s">&quot;name&quot;</span><span class="o">:</span> <span class="s">&quot;我的好友&quot;</span><span class="o">,</span>
+           <span class="s">&quot;words&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s">&quot;李馨琪&quot;</span><span class="o">,</span>
+           <span class="s">&quot;鹿晓雷&quot;</span><span class="o">,</span>
+           <span class="s">&quot;张集栋&quot;</span><span class="o">,</span>
+           <span class="s">&quot;周家莉&quot;</span><span class="o">,</span>
+           <span class="s">&quot;叶震珂&quot;</span><span class="o">,</span>
+           <span class="s">&quot;熊泽萌&quot;</span><span class="o">]</span>
+    <span class="o">}]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_SEND_LOG</td>
+<td>12</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>发送应用日志到云端，可以帮助分析应用问题</strong></div>
+<div class="line"><br /></div>
+<div class="line">需要将JSON格式的字符串放在params字段中携带。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_BUILD_GRAMMAR</td>
+<td>16</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><strong>构建本地语法</strong></div>
+<div class="line"><br /></div>
+<div class="line">用params字段携带bnf语法内容，</div>
+<div class="line">bnf语法规则请参见<a class="reference download internal" href="../_downloads/BNF语法开发指南.pdf" download=""><code class="xref download docutils literal"><span class="pre">BNF语法开发指南</span></code></a>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_UPDATE_LOCAL_LEXICON</td>
+<td>17</td>
+<td>有</td>
+<td><div class="first line-block">
+<div class="line"><strong>更新本地词表</strong></div>
+<div class="line"><br /></div>
+<div class="line">当构建好本地语法之后，</div>
+<div class="line">可以动态更新某个槽（声明为slot，实质上为词表）的内容</div>
+<div class="line">以动态变更支持的说法。将需要更新的槽名称和内容组成JSON字符串，</div>
+<div class="line">用params字段携带。</div>
+</div>
+<blockquote>
+<div><p>示例:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s">&quot;name&quot;</span><span class="o">:</span><span class="s">&quot;&lt;contact&gt;&quot;</span><span class="o">,</span>  <span class="c1">// 槽名称</span>
+  <span class="s">&quot;content&quot;</span><span class="o">:</span><span class="s">&quot;张三\n李四\n&quot;</span>  <span class="c1">//词表内容</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="last line-block">
+<div class="line">注：只有在成功构建语法之后才能调用。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>注：<strong>有返回</strong>的含义是在向 AIUI 发送一条 CMD 消息后，AIUI会抛出一个对应的<a class="reference internal" href="02_aiuievent.html#aiuievent-label"><span class="std std-ref">EVENT_CMD_RETURN</span></a>事件返回 CMD 消息的处理结果</p>
+</div>
+<div class="section" id="id1">
+<h2>5.1.2 构造发送<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>核心板模式中AIUIServiceKit SDK形式构造发送参见<a class="reference internal" href="../c04/01_coreboard.html#aiui-servicekit-sdk-label"><span class="std std-ref">ServiceKit SDK调用流程</span></a>。</p>
+<p>上位机模式串口发送参考<a class="reference internal" href="../c04/04_uart&amp;sdk.html#aiuimessage-uart-relation-label"><span class="std std-ref">AIUIMessage和串口消息的对应关系</span></a>。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02_aiuievent.html" class="btn btn-neutral float-right" title="5.2 AIUIEvent" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../chapters/05_msg&amp;event.html" class="btn btn-neutral" title="5. Message和Event" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

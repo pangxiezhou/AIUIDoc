@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/sphinxmark.css" type="text/css" />
+  
 
   
         <link rel="index" title="索引"
@@ -64,7 +66,7 @@
             
             
               <div class="version">
-                latest
+                1023
               </div>
             
           
@@ -100,16 +102,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="04_uart&amp;sdk.html">4.4 串口和SDK</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_aiuimessage.html">4.4 AIUIMessage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="06_aiuievent.html">4.6 AIUIEvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_errorcode.html">4.7 AIUI错误码</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/05_wakeup_tts.html">5. 唤醒和合成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/06_iat_nlp.html">6. AIUI结果</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_offline_cmd.html">7. 离线命令词识别</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/8_uart.html">8. 串口</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/9_debug.html">9. AIUI调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_msg&amp;event.html">5. Message和Event</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_wakeup_tts.html">6. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_iat_nlp.html">7. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/08_offline_cmd.html">8. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/09_uart.html">9. 串口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/10_debug.html">10. AIUI调试</a></li>
 </ul>
 
             
@@ -168,12 +168,12 @@
 </div>
 <div class="section" id="id3">
 <h2>4.3.2 串口协议及数据定义<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>参见<a class="reference internal" href="../c08/01_protocal.html#uart-protocal-label"><span class="std std-ref">8.1 AIUI串口协议</span></a>。</p>
+<p>参见<a class="reference internal" href="../c09/01_protocal.html#uart-protocal-label"><span class="std std-ref">9.1 AIUI串口协议</span></a>。</p>
 </div>
 <div class="section" id="id4">
 <h2>4.3.4 调用流程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>根据<a class="reference internal" href="../c08/01_protocal.html#uart-protocal-label"><span class="std std-ref">8.1 AIUI串口协议</span></a>，在<a class="reference internal" href="../c02/04_Q&amp;A.html#develop-kit-lable"><span class="std std-ref">开发包</span></a>中有<a class="reference internal" href="../c08/02_uart_android.html#uart-android-label"><span class="std std-ref">串口协议Android SDK</span></a>的实现。</p>
-<p>上位机开发调用流程可以参考该SDK的<a class="reference internal" href="../c08/02_uart_android.html#uart-android-code-label"><span class="std std-ref">代码示例</span></a>。</p>
+<p>根据<a class="reference internal" href="../c09/01_protocal.html#uart-protocal-label"><span class="std std-ref">9.1 AIUI串口协议</span></a>，在<a class="reference internal" href="../c02/04_Q&amp;A.html#develop-kit-lable"><span class="std std-ref">开发包</span></a>中有<a class="reference internal" href="../c09/02_uart_android.html#uart-android-label"><span class="std std-ref">串口协议Android SDK</span></a>的实现。</p>
+<p>上位机开发调用流程可以参考该SDK的<a class="reference internal" href="../c09/02_uart_android.html#uart-android-code-label"><span class="std std-ref">代码示例</span></a>。</p>
 <p>完整流程参考<a class="reference internal" href="../c02/04_Q&amp;A.html#develop-kit-lable"><span class="std std-ref">开发包</span></a>中UART下的UARTKitCtrDemo源码。</p>
 <p>其实流程简单一点理解就是通过串口收发AIUI消息，获取结果和控制AIUI，与<a class="reference internal" href="01_coreboard.html#aiui-sdk-deep-label"><span class="std std-ref">AIUI SDK理解</span></a>类似。</p>
 </div>
@@ -181,7 +181,7 @@
 <h2>4.4.4 其他平台<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>如果上位机是Android的话，那上位机集成开发包中串口SDK UARTKit就能很方便的开发。</p>
 <p>如果上位机是其他平台，可以先通过<a class="reference external" href="http://bbs.xfyun.cn/forum.php?mod=viewthread&amp;tid=17728&amp;extra=page%3D1">AIUI串口历险记</a>熟悉AIUI
-串口协议的一些具体内容，再参考<a class="reference internal" href="../c08/02_uart_android.html#uart-android-code-label"><span class="std std-ref">串口Android SDK的示例</span></a>熟悉处理流程。</p>
+串口协议的一些具体内容，再参考<a class="reference internal" href="../c09/02_uart_android.html#uart-android-code-label"><span class="std std-ref">串口Android SDK的示例</span></a>熟悉处理流程。</p>
 </div>
 </div>
 

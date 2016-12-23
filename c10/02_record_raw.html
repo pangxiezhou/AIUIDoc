@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10.2 音频保存 &mdash; AIUI Doc 1023 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI Doc 1023 文档" href="../index.html"/>
+        <link rel="up" title="10. AIUI调试" href="../chapters/10_debug.html"/>
+        <link rel="prev" title="10.1 ADB 调试" href="01_adb_debug.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI Doc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1023
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_prepare.html">3. 准备</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/04_develop.html">4. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_msg&amp;event.html">5. Message和Event</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/06_wakeup_tts.html">6. 唤醒和合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/07_iat_nlp.html">7. AIUI结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/08_offline_cmd.html">8. 离线命令词识别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/09_uart.html">9. 串口</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/10_debug.html">10. AIUI调试</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_adb_debug.html">10.1 ADB 调试</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.2 音频保存</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.2.1 原始音频</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.2.2 识别音频</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI Doc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/10_debug.html">10. AIUI调试</a> &raquo;</li>
+      
+    <li>10.2 音频保存</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c10/02_record_raw.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="audio-save-label">
+<span id="id1"></span><h1>10.2 音频保存<a class="headerlink" href="#audio-save-label" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>10.2.1 原始音频<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>通过手机端评估板控制端，扫描连接设备，进入控制端界面后依次点击  调试 -&gt; 保存音频 即可最长保存3min的原始音频。</p>
+<p>原始音频保存在 /sdcard/AIUI/audio/raw中，<strong>SD卡存储空间有限，请即使清理不需要的原始音频。</strong></p>
+</div>
+<div class="section" id="id3">
+<h2>10.2.2 识别音频<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>识别音频是麦克风阵列算法对原始音频进行降噪处理后的16k 16bit单声道音频，该音频会最终送到云端进行识别。</p>
+<p>通过修改配置文件中的:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="s">&quot;log&quot;</span><span class="o">:{</span>
+        <span class="s">&quot;debug_log&quot;</span><span class="o">:</span><span class="s">&quot;1&quot;</span><span class="o">,</span>
+        <span class="s">&quot;save_datalog&quot;</span><span class="o">:</span><span class="s">&quot;1&quot;</span><span class="o">,</span>
+        <span class="s">&quot;datalog_path&quot;</span><span class="o">:</span><span class="s">&quot;&quot;</span><span class="o">,</span>
+        <span class="s">&quot;datalog_size&quot;</span><span class="o">:</span><span class="mi">1024</span><span class="o">,</span>
+        <span class="s">&quot;raw_audio_path&quot;</span><span class="o">:</span><span class="s">&quot;&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>中的<code class="docutils literal"><span class="pre">save_datalog</span></code>置为1，即可把每次交互的识别音频保存下来，保存的位置位于/sdcard/AIUI/data/（此路径可以通过
+datalog_path配置修改）下，每一次唤醒后的交互音频都保存在此目录下wakeXX开始的文件夹下。</p>
+<p>all.pcm是本次唤醒后交互的全部识别音频，audio-x是本地vad切分后的识别音频。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="01_adb_debug.html" class="btn btn-neutral" title="10.1 ADB 调试" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2016, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1023',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
