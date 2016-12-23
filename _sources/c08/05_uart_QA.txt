@@ -38,7 +38,7 @@
 		如果对AIUI本身的串口功能有依赖，第三方应用如果需要读写串口发送自己的数据内容，
 		可以考虑使用\ :ref:`串口自定义 <uart_custome-label>`\ 的功能。
 
-		如果对AIUI本身的串口功能有依赖，\ :ref:`AIUI软件内部关系 <demoboard_relationship-label>`\ 中
+		如果对AIUI本身的串口功能无依赖，\ :ref:`AIUI软件内部关系 <demoboard_relationship-label>`\ 中
 		ControlService负责串口通信，所以将ControlService卸载即可独立读写串口（不推荐）。
 
 
