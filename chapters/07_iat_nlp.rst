@@ -1,6 +1,6 @@
 .. _event_result-label:
 
-6. AIUI结果
+7. AIUI结果
 ==============
 
 AIUI结果是指\ :ref:`AIUIEvent <aiuievent-label>`\ 中eventType为1(EVENT_RESULT)的结果事件。
@@ -45,5 +45,5 @@ sub字段指明结果的类型，目前根据sub字段区分三种结果：
 	:maxdepth: 1
 	:glob:
 	
-	../c06/*
+	../c07/*
 	

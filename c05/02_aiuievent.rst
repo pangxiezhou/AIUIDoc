@@ -1,9 +1,9 @@
 .. _aiuievent-label:
 
-4.6 AIUIEvent
+5.2 AIUIEvent
 --------------
 
-4.6.1 定义
+5.2.1 定义
 ^^^^^^^^^^
 
 AIUIEvent的字段定义参见\ :ref:`AIUIEvent定义 <aiui_event_def-label>`\ 。
@@ -50,14 +50,14 @@ AIUIEvent的字段定义参见\ :ref:`AIUIEvent定义 <aiui_event_def-label>`\ �
 |                     |       |    | info字段为描述信息。                                                                     |
 +---------------------+-------+-----------------------------------------------------------------------------------------------+
 
-4.6.2 EVENT_RESULT
+5.2.2 EVENT_RESULT
 ^^^^^^^^^^^^^^^^^^^
 
 看完定义列表之后，你可能会觉得大多数\ ``eventType``\ 类型都见字知义，对于EVENT_RESULT的解释还是简单些。
 的确EVENT_RESULT是AIUIEvent中最重要的消息类型，处理解析的结果都在EVENT_RESULT中，
 所以需要单独一节\ :ref:`AIUI结果 <event_result-label>`\ 解释它。
 
-4.6.3 AIUIEvent解析处理
+5.2.3 AIUIEvent解析处理
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 核心板模式AIUISericeKit SDK对\ ``AIUIEvent``\ 的处理参见\ :ref:`AIUIEvent解析 <aiui_servicekit_sdk-label>`\ 。

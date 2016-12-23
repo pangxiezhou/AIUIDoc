@@ -1,9 +1,9 @@
 .. _aiuimessage-label:
 
-4.4 AIUIMessage
+5.1 AIUIMessage
 ----------------
 
-4.4.1 msgType定义
+5.1.1 msgType定义
 ^^^^^^^^^^^^^^^^^
 
 \ **注意： CMD_WAKEUP是用于手动唤醒，不能用于频繁的唤醒以延长交互时间，否则我们会停止AIUI的服务。**\ 
@@ -114,7 +114,7 @@
 
 注：\ **有返回**\的含义是在向 AIUI 发送一条 CMD 消息后，AIUI会抛出一个对应的\ :ref:`EVENT_CMD_RETURN <aiuievent-label>`\ 事件返回 CMD 消息的处理结果
 
-4.4.2 构造发送
+5.1.2 构造发送
 ^^^^^^^^^^^^^^^^^
 
 核心板模式中AIUIServiceKit SDK形式构造发送参见\ :ref:`ServiceKit SDK调用流程 <aiui_servicekit_sdk-label>`\ 。

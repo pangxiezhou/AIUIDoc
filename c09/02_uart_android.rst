@@ -1,6 +1,6 @@
 .. _uart_android-label:
 
-8.2 串口协议Android实现参考
+9.2 串口协议Android实现参考
 ---------------------------
 
 根据\ :ref:`通信协议和通信格式 <uart_protocal-label>`\ ，在Android平台进行了实现以供开发参考。
@@ -10,12 +10,12 @@ Android SDK的接口设计同\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类�
 通过收发AIUI消息，获取AIUI结果和控制AIUI的运行。
 
 
-8.2.1 权限
+9.2.1 权限
 ^^^^^^^^^^
 
 **请确保应用有读写对应串口设备的权限（即对/dev/下的串口设备文件有rw权限）。**
 
-8.2.2 调用流程
+9.2.2 调用流程
 ^^^^^^^^^^^^^^
 
 调用主要接口类是UARTAgent。
@@ -23,7 +23,7 @@ Android SDK的接口设计同\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类�
 在程序首次初始化的地方调用静态方法createAgent创建UARTAgent实例，传入EventListener参数用于接收串口事件，
 后面调用创建的UARTAget实例的sendMessage方法发送串口消息，在程序结束前调用UARTAgent实例的destroy方法释放资源。
 
-8.2.3 接口说明
+9.2.3 接口说明
 ^^^^^^^^^^^^^^
 
 * 创建UARTAgent::
@@ -46,7 +46,7 @@ Android SDK的接口设计同\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类�
 
      void destroy()
      
-8.2.4 串口数据包
+9.2.4 串口数据包
 ^^^^^^^^^^^^^^^^
 
 实现根据通信数据格式对串口数据类型进行了封装，MsgPacket是所有类型串口数据包的父类。
@@ -89,7 +89,7 @@ Android SDK的接口设计同\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类�
 
      MsgPacket obtainWIFIConfPacket(WIFIStatus status, EncryptMethod type, String ssid, String passwd)
 
-8.2.5 串口事件监听器
+9.2.5 串口事件监听器
 ^^^^^^^^^^^^^^^^^^^^
 
 在上面创建UARTAgent实例中，传入的EventListener类型的参数listener用于监听接收串口事件。
@@ -127,7 +127,7 @@ EventListener的类型定义如下::
 
 .. _uart_android_code-label:
 
-8.2.6 代码示例
+9.2.6 代码示例
 ^^^^^^^^^^^^^^^
 
 下面代码示例了上位机集成使用的通用流程::
@@ -176,7 +176,7 @@ EventListener的类型定义如下::
 		mAgent.sendMessage(PacketBuilder.obtainAIUIConfPacket("appid", "key", "main", false));
     }
 	
-8.2.7 附录
+9.2.7 附录
 ^^^^^^^^^^
 
 所有串口数据包的父类都是MsgPacket，方法getMsgType()返回数据包类型。
