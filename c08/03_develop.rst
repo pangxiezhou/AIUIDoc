@@ -4,7 +4,7 @@
 8.3.1. 离线命令语法
 ^^^^^^^^^^^^^^^^^^^^
 
-离线命令语法是使用巴科斯范式（BNF）描述诧音识别的语法。语法文件包括HEADER和BODY。
+离线命令语法是使用巴科斯范式（BNF）描述语音识别的语法。语法文件包括HEADER和BODY。
 
 .. code-block:: none 
 
@@ -20,7 +20,8 @@
 8.3.2. 构建离线语法
 ^^^^^^^^^^^^^^^^^^^^
 
-在AIUI中定义了CMD_BUILD_GRAMMAR命令构建语法。
+在AIUI中定义了\ :ref:`CMD_BUILD_GRAMMAR <aiuimessage-label>`\ 命令构建语法。
+
 
 SDK使用::
 
@@ -44,6 +45,10 @@ SDK使用::
 		
 每次调用命令构建的语法都会覆盖先前对应的GrammerID的离线语法。
 
+该命令是有\ :ref:`返回 <aiuicmd_ret-label>`\ 的，所以通过\ :ref:`EVENT_CMD_RETURN <aiuievent-label>`\ 
+事件的arg2参数可以判断构建结果。
+
+构建使用离线语法中的错误码参考\ :ref:`AIUI错误码 <error_code-label>`\ 。
 
 8.3.3. 离线语法槽更新
 ^^^^^^^^^^^^^^^^^^^^^
