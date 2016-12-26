@@ -161,7 +161,7 @@
 <h1>8.3. 开发使用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>8.3.1. 离线命令语法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>离线命令语法是使用巴科斯范式（BNF）描述诧音识别的语法。语法文件包括HEADER和BODY。</p>
+<p>离线命令语法是使用巴科斯范式（BNF）描述语音识别的语法。语法文件包括HEADER和BODY。</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>!grammar main;
 !slot &lt;sleep&gt;;
 !start &lt;sleep&gt;;
@@ -174,7 +174,7 @@
 </div>
 <div class="section" id="id4">
 <h2>8.3.2. 构建离线语法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>在AIUI中定义了CMD_BUILD_GRAMMAR命令构建语法。</p>
+<p>在AIUI中定义了<a class="reference internal" href="../c05/01_aiuimessage.html#aiuimessage-label"><span class="std std-ref">CMD_BUILD_GRAMMAR</span></a>命令构建语法。</p>
 <p>SDK使用:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">AIUIMessage</span> <span class="n">buildGrammar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AIUIMessage</span><span class="o">(</span><span class="n">AIUIConstant</span><span class="o">.</span><span class="na">CMD_BUILD_GRAMMAR</span><span class="o">,</span>
         <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">grammar_str</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span> <span class="c1">//grammar_str为编写的离线语法</span>
@@ -196,6 +196,8 @@
 </pre></div>
 </div>
 <p>每次调用命令构建的语法都会覆盖先前对应的GrammerID的离线语法。</p>
+<p>该命令是有<a class="reference internal" href="../c05/01_aiuimessage.html#aiuicmd-ret-label"><span class="std std-ref">返回</span></a>的，所以通过<a class="reference internal" href="../c05/02_aiuievent.html#aiuievent-label"><span class="std std-ref">EVENT_CMD_RETURN</span></a>事件的arg2参数可以判断构建结果。</p>
+<p>构建使用离线语法中的错误码参考<a class="reference internal" href="../c05/03_errorcode.html#error-code-label"><span class="std std-ref">AIUI错误码</span></a>。</p>
 </div>
 <div class="section" id="id5">
 <h2>8.3.3. 离线语法槽更新<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
