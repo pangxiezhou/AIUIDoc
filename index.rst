@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to AIUI's documentation!
+AIUI集成文档   
 ===================================
 
 
@@ -13,11 +13,6 @@ Welcome to AIUI's documentation!
    
    chapters/*
    
-   
-..   听写
-..   语义
-..   信源
-..   离线
 
 
 
