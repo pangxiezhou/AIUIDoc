@@ -152,6 +152,8 @@ AIUI配置的格式为JSON。支持配置appid，key，场景，是否启动AIUI
         }
     }
 	
+**注意：AIUI配置一次设置后面即使重启也会继续生效，AIUI配置生效需要重启服务，所以AIUI配置应尽可能只在首次启动无配置或配置修改的情况下调用。**
+	
 注：配置项字段取值参见中\ :ref:`AIUI配置 <aiui_cfg_label>`\ 部分说明
 
 .. _uart_control_msg-label:
