@@ -73,10 +73,10 @@ AIUIMessage
 		class AIUIMessage
 		{
 		   int msgType;   //消息类型
-		   int arg1;      //参数1
-		   int arg2;      //参数2
-		   String params; 
-		   byte[] data;
+		   int arg1;      //参数1 默认0
+		   int arg2;      //参数2 默认0
+		   String params; //默认 ""
+		   byte[] data;   //默认 null
 		}
 		
 	AIUI定义了多种\ ``AIUIMessage``\ ，有不同的\ ``msgType``\ 。当\ ``AIUIMessage``\取不同的\ ``msgType``\时，
