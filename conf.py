@@ -81,7 +81,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'AIUI DOC'
-copyright = '2016, AIUI'
+copyright = '2017, AIUI'
 author = 'AIUI'
 
 # The version info for the project you're documenting, acts as replacement for
