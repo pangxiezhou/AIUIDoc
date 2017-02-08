@@ -29,7 +29,7 @@ AIUI支持替换唤醒词，按如下步骤进行：
 
 2. 将唤醒词资源拷贝到AIUI上（push资源前先确保目录已经创建）
 
-   ``adb push xxxxxx.jet /sdcard/AIUI/xxxxxxxx.jet`` 
+   ``adb push xxxxxx.jet /sdcard/AIUI/ivw/xxxxxxxx.jet`` 
    
 3. 通过修改\ :ref:`配置文件 <aiui_cfg_label>`\ 中如下项::
 
