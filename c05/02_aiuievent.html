@@ -197,9 +197,12 @@
 <div class="line"><strong>服务状态事件</strong></div>
 <div class="line"><br /></div>
 <div class="line">当向AIUI发送CMD_GET_STATE命令时抛出该事件，</div>
-<div class="line">arg1字段取值为STATE_IDLE(1)（空闲状态）、</div>
-<div class="line">STATE_READY(2)（就绪状态，待唤醒）、</div>
-<div class="line">STATE_WORKING(3)（工作状态，已唤醒）状态之一。</div>
+<div class="line">arg1字段取值为:</div>
+<div class="line-block">
+<div class="line">1 =&gt; STATE_IDLE（空闲状态）、</div>
+<div class="line">2 =&gt; STATE_READY（就绪状态，待唤醒）、</div>
+<div class="line">3 =&gt; STATE_WORKING（工作状态，已唤醒）状态之一。</div>
+</div>
 </div>
 </td>
 </tr>
@@ -219,8 +222,11 @@
 <div class="line"><br /></div>
 <div class="line">当出现交互超时，服务会进入休眠状态（待唤醒），</div>
 <div class="line">或者发送了CMD_RESET_WAKEUP时，抛出该事件。</div>
-<div class="line">arg1字段取值：TYPE_AUTO（自动休眠，即交互超时）、</div>
-<div class="line">TYPE_COMPEL(外部强制休眠，即发送CMD_RESET_WAKEUP)。</div>
+<div class="line">arg1字段取值：</div>
+<div class="line-block">
+<div class="line">0 =&gt; TYPE_AUTO（自动休眠，即交互超时）、</div>
+<div class="line">1 =&gt; TYPE_COMPEL (外部强制休眠，即发送CMD_RESET_WAKEUP)。</div>
+</div>
 </div>
 </td>
 </tr>
