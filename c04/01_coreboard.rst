@@ -136,3 +136,23 @@ AIUIServiceKit的一般调用流程如下::
 
 	
 具体的实现编码可以参考开发包中的AIUIDemo源码实现。
+
+4.1.5 开发者程序自启动
+^^^^^^^^^^^^^^^^^^^^^^
+
+Android 4.4之后的版本，默认新安装未启动的程序处于Stopped状态，无法接受系统广播\ `BOOT_COMPLETE`\ 实现自启动，
+所以AIUI添加对第三方应用自启动的支持。
+
+第三方应用只需要创建Receiver，按照如下的配置接收AIUI的广播即可::
+
+	<receiver android:name=".BootReceiver">
+		<intent-filter>
+			<action android:name="com.iflytek.aiuilauncher.action.BOOT_START"/>
+		</intent-filter>
+	</receiver>
+
+
+
+
+
+

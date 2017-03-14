@@ -72,7 +72,7 @@ Q：AIUI在一分钟后就自动休眠了，怎么让它的时间更长一点？
 	A：参见\ :ref:`aiui_cfg_label`\ 中交互参数\ `interact_timeout`\ 的修改。
 
 	
-.. set_beam_QA-label:
+.. _set_beam_qa-label:
 
 Q: 设置拾音波束是干嘛用的?
 
