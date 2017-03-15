@@ -241,6 +241,30 @@ type为tts，发送文本让AIUI开始合成播放或者停止合成播放:
 			  }
 		  }
 
+9.1.9.6 SmartConfig
+""""""""""""""""""""
+
+type为smartcfg，控制AIUI模块smartconfig功能开关:
+
+	* 开始命令::
+	
+		{
+			"type": "smartcfg",
+			"content": {
+				"cmd": "start",
+				"timeout": 60 //接收smartconfig配置的超时
+			}
+		}
+		
+	* 停止命令::
+
+		{
+			"type": "smartcfg",
+			"content": {
+				"cmd": "stop",
+			}
+		}
+		  
 .. _uart_aiuimsg-label:		  
 		  
 9.1.10 AIUI消息
@@ -253,7 +277,7 @@ AIUI消息根据type的不同，解析不同的数据。
 9.1.10.1 WIFI状态
 """"""""""""""""""
 
-type为wifi_status，代表WIFI状态查询返回，示例如下::
+type为wifi_status，代表WIFI状态查询返回或者当AIUI网络状态变化时主动通知，示例如下::
 
 	{
 		 "type": "wifi_status",

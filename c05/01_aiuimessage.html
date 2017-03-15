@@ -160,10 +160,10 @@
 <p><strong>注意： CMD_WAKEUP是用于手动唤醒，不能用于频繁的唤醒以延长交互时间，否则我们会停止AIUI的服务。</strong></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
+<col width="20%" />
 <col width="7%" />
-<col width="5%" />
-<col width="70%" />
+<col width="4%" />
+<col width="69%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>msgType（消息类型）</td>
@@ -240,7 +240,7 @@
 <td><div class="first last line-block">
 <div class="line">设置麦克风阵列的拾音波束，用arg1携带拾音波束号。</div>
 <div class="line">关于波束的定义参见<a class="reference download internal" href="../_downloads/麦克风设计参考V0.8.pdf" download=""><code class="xref download docutils literal"><span class="pre">麦克风设计参考</span></code></a>。</div>
-<div class="line">关于设置拾音波束的作用参考<span class="xref std std-ref">设置拾音波束</span></div>
+<div class="line">关于设置拾音波束的作用参考<a class="reference internal" href="../c02/04_Q&amp;A.html#set-beam-qa-label"><span class="std std-ref">设置拾音波束</span></a></div>
 </div>
 </td>
 </tr>
@@ -349,6 +349,18 @@
 </div></blockquote>
 <div class="last line-block">
 <div class="line">注：只有在成功构建语法之后才能调用。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_RESULT_VALIDATION_ACK</td>
+<td>20</td>
+<td>无</td>
+<td><div class="first line-block">
+<div class="line">在接收到语义、听写、后处理的结果后5s内可发送该指令对结果进行确认，</div>
+<div class="line">AIUI会认为该条结果有效，并重新开始AIUI交互超时的计时</div>
+</div>
+<div class="last line-block">
+<div class="line">关于交互超时的机制参看<a class="reference internal" href="../c03/02_aiuicfg.html#aiui-cfg-label"><span class="std std-ref">AIUI配置</span></a>中<cite>interact_timeout</cite>的解释</div>
 </div>
 </td>
 </tr>
