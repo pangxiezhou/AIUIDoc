@@ -207,7 +207,7 @@
 <p>Q：AIUI在一分钟后就自动休眠了，怎么让它的时间更长一点？</p>
 <blockquote>
 <div>A：参见<a class="reference internal" href="../c03/02_aiuicfg.html#aiui-cfg-label"><span class="std std-ref">3.2 配置文件</span></a>中交互参数<cite>interact_timeout</cite>的修改。</div></blockquote>
-<p>Q: 设置拾音波束是干嘛用的?</p>
+<p id="set-beam-qa-label">Q: 设置拾音波束是干嘛用的?</p>
 <blockquote>
 <div><p>A: 设置拾音方向的功能是考虑机器人在移动时，导致后面的交互可能与先前唤醒的角度不一致，
 导致拾音效果不好的情况提供的。<a class="reference internal" href="../c05/01_aiuimessage.html#aiuimessage-label"><span class="std std-ref">AIUIMessage</span></a>中CMD_SET_BEAM设置，arg1表示设置的拾音波束号。不同类型麦克风的拾音波束号参见《麦克风设计参考》。</p>

@@ -112,6 +112,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#id11">9.1.9.3 WIFI状态查询</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id12">9.1.9.4 音频保存</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id13">9.1.9.5 文本合成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smartconfig">9.1.9.6 SmartConfig</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#uart-aiuimsg-label">9.1.10 AIUI消息</a><ul>
@@ -570,6 +571,35 @@ AIUI消息格式中的数据采用GZIP压缩格式，压缩前的编码格式也
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="smartconfig">
+<h3>9.1.9.6 SmartConfig<a class="headerlink" href="#smartconfig" title="永久链接至标题">¶</a></h3>
+<p>type为smartcfg，控制AIUI模块smartconfig功能开关:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">开始命令:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+        <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;smartcfg&quot;</span><span class="o">,</span>
+        <span class="s">&quot;content&quot;</span><span class="o">:</span> <span class="o">{</span>
+                <span class="s">&quot;cmd&quot;</span><span class="o">:</span> <span class="s">&quot;start&quot;</span><span class="o">,</span>
+                <span class="s">&quot;timeout&quot;</span><span class="o">:</span> <span class="mi">60</span> <span class="c1">//接收smartconfig配置的超时</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">停止命令:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+        <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;smartcfg&quot;</span><span class="o">,</span>
+        <span class="s">&quot;content&quot;</span><span class="o">:</span> <span class="o">{</span>
+                <span class="s">&quot;cmd&quot;</span><span class="o">:</span> <span class="s">&quot;stop&quot;</span><span class="o">,</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="uart-aiuimsg-label">
 <span id="id14"></span><h2>9.1.10 AIUI消息<a class="headerlink" href="#uart-aiuimsg-label" title="永久链接至标题">¶</a></h2>
@@ -577,7 +607,7 @@ AIUI消息格式中的数据采用GZIP压缩格式，压缩前的编码格式也
 <p>AIUI消息根据type的不同，解析不同的数据。</p>
 <div class="section" id="id15">
 <h3>9.1.10.1 WIFI状态<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
-<p>type为wifi_status，代表WIFI状态查询返回，示例如下:</p>
+<p>type为wifi_status，代表WIFI状态查询返回或者当AIUI网络状态变化时主动通知，示例如下:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
          <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;wifi_status&quot;</span><span class="o">,</span>
          <span class="s">&quot;content&quot;</span><span class="o">:</span> <span class="o">{</span>
