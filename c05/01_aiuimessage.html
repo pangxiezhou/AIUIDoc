@@ -352,6 +352,24 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td>CMD_START_THROW_AUDIO</td>
+<td>18</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line">开始抛出识别音频。调用之后，抛出<code class="docutils literal"><span class="pre">EVENT_AUDIO</span></code>事件。</div>
+<div class="line">arg1为拾音波束编号设置，若当前未唤醒则会使用该波束拾音，</div>
+<div class="line">若已经处于唤醒状态则arg1不起作用。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_STOP_THROW_AUDIO</td>
+<td>19</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line">停止抛出识别音频。调用之后，停止抛出<code class="docutils literal"><span class="pre">EVENT_AUDIO</span></code>事件</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td>CMD_RESULT_VALIDATION_ACK</td>
 <td>20</td>
 <td>无</td>
