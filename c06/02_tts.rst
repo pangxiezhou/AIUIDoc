@@ -82,3 +82,15 @@ AIUI默认的发音人是离线的发音人萌萌::
 
 更多发音人资源请联系\ :ref:`商务 <aiui_busines-label>`\ 
 	
+	
+^^^^^^^^^^^^^^^^^^^^^	
+6.2.4 情感发音人
+^^^^^^^^^^^^^^^^^^^^^
+
+发音人mengmeng支持情感发音，目前支持中立(neutral)，高兴(happy)，悲伤(sorrow)三种情感。
+
+设置使用情感发音人，需要在调用合成前，使用TTS引擎的\ ``setParameter(String key, String value)``\ 设置情感参数::
+
+	mTTS.setParameter("emot", emot);  //emot值为neutral，happy，sorrow中一个
+
+具体使用和体验效果参考开发包AIUIProductDemo源码PlayController中设置部分。
