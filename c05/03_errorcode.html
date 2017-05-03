@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.3 AIUI错误码 &mdash; AIUI DOC 1031 文档</title>
+  <title>5.3 AIUI错误码 &mdash; AIUI DOC 1034 文档</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="AIUI DOC 1031 文档" href="../index.html"/>
+    <link rel="top" title="AIUI DOC 1034 文档" href="../index.html"/>
         <link rel="up" title="5. Message和Event" href="../chapters/05_msg&amp;event.html"/>
         <link rel="next" title="6. 唤醒和合成" href="../chapters/06_wakeup_tts.html"/>
         <link rel="prev" title="5.2 AIUIEvent" href="02_aiuievent.html"/> 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                1031
+                1034
               </div>
             
           
@@ -153,9 +153,9 @@
 <span id="error-code-label"></span><h1>5.3 AIUI错误码<a class="headerlink" href="#aiui" title="永久链接至标题">¶</a></h1>
 <table border="1" class="docutils">
 <colgroup>
-<col width="43%" />
-<col width="18%" />
-<col width="39%" />
+<col width="37%" />
+<col width="16%" />
+<col width="48%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>错误码</td>
@@ -186,63 +186,67 @@
 <td>10146</td>
 <td>语义结果超时</td>
 </tr>
-<tr class="row-even"><td>MSP_ERROR_LMOD_RUNTIME_EXCEPTION</td>
+<tr class="row-even"><td>MSP_ERROR_AIUI_NO_ENOUGH_LICENSE</td>
+<td>11216</td>
+<td>AIUI授权不足，默认一个APPID有5台授权</td>
+</tr>
+<tr class="row-odd"><td>MSP_ERROR_LMOD_RUNTIME_EXCEPTION</td>
 <td>16005</td>
 <td>MSC 内部错误</td>
 </tr>
-<tr class="row-odd"><td>ERROR_NO_NETWORK</td>
+<tr class="row-even"><td>ERROR_NO_NETWORK</td>
 <td>20001</td>
 <td>无有效的网络连接</td>
 </tr>
-<tr class="row-even"><td>ERROR_NETWORK_TIMEOUT</td>
+<tr class="row-odd"><td>ERROR_NETWORK_TIMEOUT</td>
 <td>20002</td>
 <td>网络连接超时</td>
 </tr>
-<tr class="row-odd"><td>ERROR_NET_EXPECTION</td>
+<tr class="row-even"><td>ERROR_NET_EXPECTION</td>
 <td>20003</td>
 <td>网络连接发生异常</td>
 </tr>
-<tr class="row-even"><td>ERROR_INVALID_RESULT</td>
+<tr class="row-odd"><td>ERROR_INVALID_RESULT</td>
 <td>20004</td>
 <td>无有效的结果</td>
 </tr>
-<tr class="row-odd"><td>ERROR_NO_MATCH</td>
+<tr class="row-even"><td>ERROR_NO_MATCH</td>
 <td>20005</td>
 <td>无匹配结果</td>
 </tr>
-<tr class="row-even"><td>ERROR_AUDIO_RECORD</td>
+<tr class="row-odd"><td>ERROR_AUDIO_RECORD</td>
 <td>20006</td>
 <td>录音失败</td>
 </tr>
-<tr class="row-odd"><td>ERROR_COMPONENT_NOT_INSTALLED</td>
+<tr class="row-even"><td>ERROR_COMPONENT_NOT_INSTALLED</td>
 <td>21001</td>
 <td>没有安装服务组件</td>
 </tr>
-<tr class="row-even"><td>ERROR_SERVICE_BINDER_DIED</td>
+<tr class="row-odd"><td>ERROR_SERVICE_BINDER_DIED</td>
 <td>21020</td>
 <td>与服务的绑定已消亡</td>
 </tr>
-<tr class="row-odd"><td>ERROR_LOCAL_NO_INIT</td>
+<tr class="row-even"><td>ERROR_LOCAL_NO_INIT</td>
 <td>22001</td>
 <td>本地引擎未初始化</td>
 </tr>
-<tr class="row-even"><td>ERROR_AITALK_INVALID_PARA</td>
+<tr class="row-odd"><td>ERROR_AITALK_INVALID_PARA</td>
 <td>23102</td>
 <td>离线语法配置错误</td>
 </tr>
-<tr class="row-odd"><td>ERROR_AITALK_INVALID_RESOURCE</td>
+<tr class="row-even"><td>ERROR_AITALK_INVALID_RESOURCE</td>
 <td>23107</td>
 <td>离线识别资源无效</td>
 </tr>
-<tr class="row-even"><td>ERROR_AITALK_NOT_FOUND</td>
+<tr class="row-odd"><td>ERROR_AITALK_NOT_FOUND</td>
 <td>23108</td>
 <td>未找到构建的离线语法</td>
 </tr>
-<tr class="row-odd"><td>ERROR_AITALK_INVALID_GRAMMAR</td>
+<tr class="row-even"><td>ERROR_AITALK_INVALID_GRAMMAR</td>
 <td>23109</td>
 <td>识别语法错误</td>
 </tr>
-<tr class="row-even"><td>ERROR_UNKNOWN</td>
+<tr class="row-odd"><td>ERROR_UNKNOWN</td>
 <td>20999</td>
 <td>未知错误</td>
 </tr>
@@ -291,7 +295,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1031',
+            VERSION:'1034',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
