@@ -217,18 +217,24 @@ type为save_audio，控制AIUI保存原始音频，通过save_len指定保存音
 	  }
 	}
 	
+.. _uart_tts-label:	
+
 9.1.9.5 文本合成
 """"""""""""""""""
 
 type为tts，发送文本让AIUI开始合成播放或者停止合成播放:
 
-	* 开始合成命令::
+	* 开始合成命令(parameters为可选参数)::
 
 		  {
 			  "type": "tts",
 			  "content": {
 				  "action": "start",  //开始合成
 				  "text": "xxx"       //需要合成播放的文本(注意文本的编码格式要为utf-8)
+				  "parameters" : {
+					  "emot" : "xxx" //emot值为neutral，happy，sorrow中一个
+					  "xxx" : "xxx" // TTS支持设置的其他参数
+				  }
 			  } 
 		  }
 		  
