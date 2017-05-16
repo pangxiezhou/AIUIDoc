@@ -270,6 +270,36 @@ type为smartcfg，控制AIUI模块smartconfig功能开关:
 				"cmd": "stop",
 			}
 		}
+		
+9.1.9.7 AIUI结果过滤命令
+"""""""""""""""""""""""""
+
+默认情况下，AIUI会将用户在云端配置的所有语义场景类型的结果都通过串口发送给上位机。
+
+但是可能在某些情况下，比如上位机是单片机，仅仅需要接收操控类的指令，对天气，音乐，
+故事类的结果仅希望在AIUI模块上播出，而不需要发送到上位机。
+
+在这种情况下，开发者可以通过命令控制过滤选择发送到上位机的AIUI结果的场景类型::
+
+		{
+			"type": "event_filter",
+			"content": {
+				"type_filter" : {
+					"select" : [],
+					"unselect": [],
+				},
+				"sub_filter": {
+					"select" : [],
+					"unselect": [],
+				},
+				"service_filter": {
+					"select" : [],
+					"unselect": [],
+				}
+			}
+		}
+
+
 		  
 .. _uart_aiuimsg-label:		  
 		  
