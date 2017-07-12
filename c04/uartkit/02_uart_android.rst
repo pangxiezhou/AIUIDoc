@@ -134,3 +134,5 @@ MsgPacket
 
 如果上位机是其他平台，可以先通过\ `AIUI串口历险记 <http://bbs.xfyun.cn/forum.php?mod=viewthread&tid=17728&extra=page%3D1>`_\ 熟悉AIUI
 串口协议的一些具体内容，再参考\ :ref:`串口Android SDK的示例 <uart_android_code-label>`\ 熟悉处理流程。
+
+在Windows上也有分享的AIUI串口工具，参见\ `AIUI串口调试助手 <http://bbs.xfyun.cn/forum.php?mod=viewthread&tid=26336>`_\ 。

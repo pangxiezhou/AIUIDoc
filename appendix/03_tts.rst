@@ -28,7 +28,8 @@
 			
 	串口SDK
 		串口合成参见\ :ref:`文本合成 <uart_tts-label>`\ 。
-			
+	
+.. _emotion_tts-label:	
 			
 6.3.1 情感合成
 ---------------
