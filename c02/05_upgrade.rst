@@ -15,8 +15,18 @@ AIUI开发包为开发者提供了升级和集成AIUI需要的apk，依赖库及
 
 .. image:: demoboard.png
 
+2.5.1 Demo说明
+--------------
 
-2.5.1 固件升级
+sample下包含AIUIDemo和AIUIProductDemo，都是运行在AIUI评估板上。
+
+AIUIDemo
+	用于说明AIUI配置文件和接口的基本调用方法，该Demo需要界面操作，可以使用TotalControl或vysor进行操作
+	
+AIUProductDemo
+	AIUI评估板默认播报程序程序的源码工程，包含完整的交互处理，如评估板的灯光控制，歌曲播报处理等
+
+2.5.2 固件升级
 --------------
 
 除了AIUI软件的升级外，如果新增的功能需要设计底层的修改，也同时需要升级固件。

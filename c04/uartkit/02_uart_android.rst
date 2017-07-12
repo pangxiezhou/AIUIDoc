@@ -9,8 +9,12 @@
 根据\ :ref:`通信协议和通信格式 <uart_protocal-label>`\ ，在Android平台进行了实现以供开发参考。
 如果上位机平台是Android平台，可以直接集成使用。
 
+\ :ref:`开发包 <dev_kit-label>`\ 中包含串口开发包下的UARTKit是AIUI串口协议实现的Library工程，UARTKitCtrDemo是运行在Android上位机上
+依赖UARTKit的Application工程，用于UARTKit接口使用的示例，AIUI中串口收发也是使用的UARTKit Library。
+
 Android SDK的接口设计同\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类似，通过串口架起与AIUIService交互的桥梁，
 通过收发AIUI消息，获取AIUI结果和控制AIUI的运行。
+
 
 
 4.2.2.1.1 权限
