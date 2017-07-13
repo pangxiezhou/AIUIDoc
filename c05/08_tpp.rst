@@ -7,4 +7,4 @@ AIUI后处理开放平台是为AIUI开发者提供更方便的后台接入能力
 在后处理过程中，AIUI服务将听写或语义的消息发送给配置的后处理服务器，服务器将处理的结果返回给AIUI服务，AIUI服务
 再将处理结果下发给客户端，开发者通过集成AIUI SDK接收后处理结果，结果的解析参考\ :ref:`AIUI结果解析 <aiui_result_parse-label>`\ 。
 
-服务端详细后处理协议参考\ `AIUI应用管理 <http://www.xfyun.cn/aiui/manage>`_\ 中\ *回调参设置*\ 查看文档协议。
+服务端详细后处理协议参考\ `AIUI应用管理 <http://www.xfyun.cn/aiui/index>`_\ 中\ *回调参设置*\ 查看文档协议。
