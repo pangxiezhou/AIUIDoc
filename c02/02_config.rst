@@ -7,7 +7,7 @@
 AIUI评估板支持多种配置网路的方式。
 
 SmartConfig
-    1. 确保评估板上已经安装 SmartConfigService.apk 并已随开机启动运行；
+    1. 确保评估板上已经安装\ :ref:`开发包 <dev_kit-label>`\ 中SmartConfigService.apk 并已随开机启动运行；
     2. 确保手机客户端已经连接到 WIFI；
     3. 短按评估板右下角的 Load 键，语音提示进入 SmartConfig 连网模式，等待手机发送账号、密码；
     4. 在手机端右上角点击快联然后设置所连接 WIFI 的账号、密码，发送给评估板。
