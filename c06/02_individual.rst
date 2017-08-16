@@ -44,15 +44,14 @@ AIUI开放平台支持开发者DIY自己的\ `自定义技能 <http://aiui.xfyun
 
 在自定义技能中，开发者可以将语法定义中的语义槽与某个实体关联，实体类似一个包含所有支持说法的字典，比如开放平台支持内置的开放
 实体艺术家\ ``IFLYTEK.Artist``\ 就涵盖了很多歌手的名字和对应昵称等这些说法。
-示例如下：
 
 除了内置的开放实体，AIUI开放平台也支持开发者定义新的实体，在后台添加对应的支持的说法，这种实体为静态实体。另外支持开发者只在后台
-定义实体的数据格式，然后通过AIUI客户端接口动态上传支持说法的具体内容，这种实体为动态实体。上面提到的接口的作用即为动态上传和使用
+定义实体的数据格式，然后通过AIUI客户端接口动态上传支持说法的具体内容，这种实体为动态实体。下面提到的接口的作用即为动态上传和使用
 动态实体。
 
 自定义技能和实体的更多细节参考AIUI开放平台上\ `自定义技能 <http://aiui.xfyun.cn/info/guide#100>`_\ 。
 
-6.2.3 使用流程
+6.2.3 动态实体
 ---------------
 
 6.2.3.1 动态实体定义
@@ -60,10 +59,6 @@ AIUI开放平台支持开发者DIY自己的\ `自定义技能 <http://aiui.xfyun
 
 一个动态实体的定义可以包含多个资源Resource的定义，资源定义中包含了资源名称，以及从客户端上传数据抽取说法的字段名以及生效的维度。
 生效的维度目前有用户级(uid)、应用级(appid)、自定义级，在客户端上传对应的资源数据时，维度信息需要和定义时保持一致。
-
-示例如下：
-
-
 
 .. _upload_schema-label:
 
@@ -116,7 +111,7 @@ data的实际内容是将如上数据进行base64编码后的结果。
 	paramJson.put("res_name", "user_applist");
 	
 	syncSchemaJson.put("param", paramJson);
-	syncSchemaJson.put("data", Base64.encodeToString(FileUtil.readAssetsFile(context, "file_path"), Base64.DEFAULT));
+	syncSchemaJson.put("data", Base64.encodeToString(FileUtil.readAssetsFile(context, "file_path"),  Base64.DEFAULT | Base64.NO_WRAP));
 	
 	// 传入的数据一定要为utf-8编码
 	byte[] syncData = syncSchemaJson.toString().getBytes("utf-8");
@@ -221,5 +216,53 @@ AIUI中会自动补全appid和uid的值），同理用户级动态实体生效�
 
 除了通过\ ``CMD_SET_PARAMS``\ 设置\ ``pers_param``\ ，也可以在\ :ref:`写入音频 <data_write-label>`\ 时设置该参数。
 
+6.2.4 所见即可说
+------------------
 
+6.2.4.1 所见即可说定义
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
+动态实体还有一种特殊的维度，名为所见即可说。该种动态实体上传的内容只会生效使用一次，在上传后生效交互一次后，即会恢复无数据的状态。
+该维度适用于一些临时数据，如只在当前屏幕显示的信息，在上传当前屏幕内容数据后，用户根据当前屏幕的内容进行交互，交互过后屏幕内容即会刷新，
+更多示例和解释参考AIUI开放平台上\ `自定义技能 <http://aiui.xfyun.cn/info/guide#100>`_\ 。
+
+在AIUI开放语义后台的定义，在维度中勾选所见即可说，示例如下：
+
+6.2.4.2 动态上传资源数据
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+通过\ ``CMD_SYNC`` \ 上传同步资源数据，arg1表示同步的数据类型，所见即可说对应\ ``SYNC_DATA_SPEAKABLE``\ （常量对应值为5）。
+data为同步JSON内容的utf-8二进制数据。
+JSON内容示例如下::
+
+	{
+		// 识别数据
+		"iat_user_data": {		
+			"recHotWords": "播报内容|地图显示|路径优先",
+			"sceneInfo": {}
+		},
+		
+		// 语义数据
+		"nlp_user_data": {		
+			"res": [
+				{
+					"res_name": "vendor_applist",		// 资源名称
+					"data": "xxxxxx"		// 数据的base64编码
+				}
+			],
+			"skill_name": "telephone"					// 对应的技能名称
+		}
+	}
+
+上传数据中包含识别和语义数据，识别数据包含所有识别热词，以|分隔，语义数据中包含资源名称，资源数据，资源对应的技能名称。
+资源名称和资源数据与上面描述的动态实体中的字段相同，技能名称是该实体对应生效的技能。
+
+上传的代码示例参考如上\ :ref:`动态实体数据构造上传部分 <upload_schema-label>`\ 。
+
+6.2.4.4 生效使用
+^^^^^^^^^^^^^^^^^
+
+与\ :ref:`动态实体生效使用 <individual_work-label>`\ 类似，需要在pers_param中添加uid即可生效使用::
+
+	"pers_param":"{\"uid\":\"\"}",
+	
