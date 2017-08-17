@@ -142,16 +142,19 @@ WIFI配置结果中，状态取值：
 4.2.1.8 AIUI配置
 ^^^^^^^^^^^^^^^^^^
 
-AIUI配置的格式为JSON。支持配置appid，key，场景，是否启动AIUIProductDemo（解析AIUI结果，进行播报的APP）。
+AIUI配置的格式为JSON，content中包含配置文件内容，可配置字段参考\ :ref:`AIUI配置文件 <aiui_cfg_label>`\ 内容，除AIUI配置文件中的内容外还
+可以通过launch_demo配置是否启动AIUIProductDemo。
 
 配置appid，key，场景等示例如下::
 
     {
         "type": "aiui_cfg",
         "content": {
-            "appid": "appid",
-            "key": "key",
-            "scene": "main",
+            "login":{
+				"appid ":"xxxxxxxx",
+				"key ":"xxxxxxxx"
+			},
+			.....
             "launch_demo": false
         }
     }

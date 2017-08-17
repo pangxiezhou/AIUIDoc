@@ -53,7 +53,9 @@ AIUI的配置内容格式是json，配置了AIUI运行时各方面的参数::
 		// 语音业务流程
 		"speech":{
 			"intent_engine_type":"mixed",
-			"interact_mode":"continuous"
+			"interact_mode":"continuous",
+			//rec_only（仅使用当麦克风阵列录音）、intent（对音频进行处理，返回意图分析结果）
+			"work_mode":"intent" 
 		},
 
 		/* 硬件参数设置 */
@@ -63,6 +65,12 @@ AIUI的配置内容格式是json，配置了AIUI运行时各方面的参数::
 			"card_sample_rate":"96000"
 		},
 
+		/* 音频参数(非必须)*/
+		"audioparams":{
+			"msc.lng": "", //经度
+			"msc.lat": "" //纬度
+		},
+		
 		/* 日志设置 */
 		"log":{
 			"debug_log":"1",
@@ -70,6 +78,8 @@ AIUI的配置内容格式是json，配置了AIUI运行时各方面的参数::
 			"datalog_path":"",
 			"datalog_siz":1024
 		},
+		
+		
 	
 	}
 	
