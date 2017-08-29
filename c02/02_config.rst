@@ -19,12 +19,12 @@ Windows批处理
 	
 同屏UI操作
 	1. 评估板插上电源、开机，使用 USB 线连接电脑，配置好 ADB 的环境变量；
-	2. 使用TotalControl或者Vysor，通过界面直接操作评估版WIFI配置。
+	2. 使用TotalControl或者Vysor，通过界面直接操作评估板WIFI配置。
 	
 2.2.2 应用配置
 ---------------------
 
-通过\ `AIUI官网 <http://www.xfyun.cn/aiui/index>`_ 购买评估板时会同时创建一个AIUI的应用，通过\ `AIUI应用管理 <http://www.xfyun.cn/aiui/index>`_\ 查看对应
+通过\ `AIUI官网 <http://www.xfyun.cn/aiui/index>`_ 购买评估板时会同时创建一个AIUI的应用，通过\ `AIUI应用管理 <http://www.xfyun.cn/aiui/index>`_\ 查看该
 应用的APPID和KEY，如下所示：
 
 .. image:: appid.png

@@ -28,7 +28,7 @@ Android SDK的接口设计同\ :ref:`AIUI SDK理解 <AIUI_SDK_deep-label>`\ 类�
 调用主要接口类是UARTAgent。
 
 在程序首次初始化的地方调用静态方法createAgent创建UARTAgent实例，传入EventListener参数用于接收串口事件，
-后面调用创建的UARTAget实例的sendMessage方法发送串口消息，在程序结束前调用UARTAgent实例的destroy方法释放资源。
+后面调用创建的UARTAgent实例的sendMessage方法发送串口消息，在程序结束前调用UARTAgent实例的destroy方法释放资源。
 
 4.2.2.1.3 接口说明
 """"""""""""""""""
@@ -128,7 +128,7 @@ MsgPacket
 
 	//发送AIUI配置信息
 	if(intent.hasExtra("aiui_conf")){
-		mAgent.sendMessage(PacketBuilder.obtainAIUIConfPacket("appid", "key", "main", false));
+		mAgent.sendMessage(PacketBuilder.obtainAIUIConfPacket("appid", "key", "scene", false));
     }
 	
 4.2.2.2 其他平台实现

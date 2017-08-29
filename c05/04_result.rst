@@ -31,7 +31,7 @@ AIUI交互结果中除了唤醒结果其他所有结果都通过\ ``EVENT_RESULT
 		{
 			"data": [{
 				"params": {
-					"sub": "iat",
+					"sub": "iat"
 				},
 				"content": [{
 					"dte": "utf8",

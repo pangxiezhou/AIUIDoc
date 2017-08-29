@@ -8,7 +8,7 @@
 4.1.1 交互理解
 ^^^^^^^^^^^^^^^
 
-AIUI旨在封装交互一切复杂性，为开发者提供简单易用的接口。
+AIUI旨在封装交互的复杂性，为开发者提供简单易用的接口。
 
 AIUIServiceKit中提供的AIUIAgent就是和AIUIService交互的桥梁，通过发送不同的\ ``AIUIMessage``\ 控制AIUI的运行，
 AIUI通过\ ``AIUIListener``\ 将不同的\ ``AIUIEvent``\ 抛出来给开发者程序解析。
@@ -34,7 +34,7 @@ AIUIAgent
 		
 		
 AIUIListener
-	创建\ ``AIUIAgent``\ 时传递的参数\ ``AIUIListener``\ 是用于接受AIUIService抛出事件的监听器。
+	创建\ ``AIUIAgent``\ 时传递的参数\ ``AIUIListener``\ 是用于接收AIUIService抛出事件的监听器。
 
 	\ ``AIUIListener``\ 定义如下::
 

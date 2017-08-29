@@ -29,7 +29,7 @@ AIUProductDemo
 2.5.2 固件升级
 --------------
 
-除了AIUI软件的升级外，如果新增的功能需要设计底层的修改，也同时需要升级固件。
+除了AIUI软件的升级外，如果新增的功能需要涉及底层的修改，也同时需要升级固件。
 
 固件的下载和更新参见\ `讯飞开放平台论坛 AIUI板块 <http://bbs.xfyun.cn/forum.php?mod=viewthread&tid=19132&highlight=AIUI%2B%E5%9B%BA%E4%BB%B6>`_\ 。
 

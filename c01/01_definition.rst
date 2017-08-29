@@ -6,7 +6,7 @@ AIUI是科大讯飞提供的一套人机智能交互解决方案， 旨在实现
 AIUI包括AIUI开放平台和为不同\ `使用场景 <http://aiui.xfyun.cn/>`_ \ 下提供不同的接入SDK。目前有如下接入方式:
 
 `AIUI智能硬件 <http://www.xfyun.cn/aiui/index>`_
-	提供软硬一体的模块方案，应用多种智能硬件领域， 如智能家居、 机器人等。硬件上提供的前端声学处理和AIUI运行的载体。
+	提供软硬一体的模块方案，应用于多种智能硬件领域， 如智能家居、 机器人等。硬件上提供了前端声学处理和AIUI运行的载体。
 	
 `AIUI移动端 <http://aiui.xfyun.cn/default/mobileIndex>`_
 	提供基于Android、iOS、Windows、Linux平台的移动端解决方案，只需要使用移动端接入SDK，不需要硬件即可使用。

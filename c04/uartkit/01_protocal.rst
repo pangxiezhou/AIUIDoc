@@ -57,7 +57,7 @@ AIUI使用模块上的串口UART1，对应文件系统下的/dev/ttyS2。
 
 * 接收方接到请求后需在50ms内发送响应；
  
-* 发送方发送完成后若超过300ms未得到响应则判定为超时进行重发，重发次数为3次。
+* 除确认消息外发送方发送完成后若超过300ms未得到响应则判定为超时进行重发，重发次数为3次。
 
 .. _conmunicate_protocal-label:
 
@@ -241,7 +241,7 @@ type为tts，发送文本让AIUI开始合成播放或者停止合成播放:
 			  "type": "tts",
 			  "content": {
 				  "action": "start",  //开始合成
-				  "text": "xxx"       //需要合成播放的文本(注意文本的编码格式要为utf-8)
+				  "text": "xxx",       //需要合成播放的文本(注意文本的编码格式要为utf-8)
 				  "parameters" : {
 					  "emot" : "xxx" //emot值为neutral，happy，sorrow中一个
 					  "xxx" : "xxx" // TTS支持设置的其他参数
@@ -254,7 +254,7 @@ type为tts，发送文本让AIUI开始合成播放或者停止合成播放:
 		  {
 			  "type": "tts",
 			  "content": {
-				  "action": "stop",  //停止合成
+				  "action": "stop"  //停止合成
 			  }
 		  }
 
@@ -269,7 +269,7 @@ type为smartcfg，控制AIUI模块smartconfig功能开关:
 			"type": "smartcfg",
 			"content": {
 				"cmd": "start",
-				"timeout": 60 //接收smartconfig配置的超时
+				"timeout": 60 //接收smartconfig配置的超时时间
 			}
 		}
 		
@@ -278,7 +278,7 @@ type为smartcfg，控制AIUI模块smartconfig功能开关:
 		{
 			"type": "smartcfg",
 			"content": {
-				"cmd": "stop",
+				"cmd": "stop"
 			}
 		}
 	
@@ -299,15 +299,15 @@ type为smartcfg，控制AIUI模块smartconfig功能开关:
 			"content": {
 				"type_filter" : {
 					"select" : [],
-					"unselect": [],
+					"unselect": []
 				},
 				"sub_filter": {
 					"select" : [],
-					"unselect": [],
+					"unselect": []
 				},
 				"service_filter": {
 					"select" : [],
-					"unselect": [],
+					"unselect": []
 				}
 			}
 		}
@@ -322,7 +322,7 @@ type为smartcfg，控制AIUI模块smartconfig功能开关:
 AIUI消息是AIUI模块传递给上位机的消息，表示听写语义数据返回或者主控消息操作的结果。
 原始内容格式为JSON，**但是为了传输的效率，实际消息内容采用了GZIP压缩格式**。
 
-AIUI消息根据type的不同，解析不同的数据。
+AIUI消息根据type字段的不同值解析数据。
 
 4.2.1.10.1 WIFI状态
 """""""""""""""""""""
@@ -342,7 +342,7 @@ type为wifi_status，代表WIFI状态查询返回或者当AIUI网络状态变化
 4.2.1.10.2 AIUI结果事件
 """""""""""""""""""""""""
 	
-type为aiui_event，代表为AIUI语义结果返回，总体结构示例::
+type为aiui_event，代表AIUI结果返回，总体结构示例::
 
 	{
 		 "type": "aiui_event",
@@ -377,7 +377,7 @@ type为tts_event，表示合成事件:
 			  "type": "tts_event",
 			  "content": {
 				  "eventType": 1,        //合成结束事件
-				  "error": ttsErrorCode  //当发生错误时error字段代表合成错误码
+				  "error": ttsErrorCode  //0表示成功;发生错误时代表合成错误码
 			  }
 		  }
 
