@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AIUI集成文档 &mdash; AIUI DOC 1034 文档</title>
+  <title>AIUI集成文档 &mdash; AIUI DOC 1042 文档</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="索引"
               href="genindex.html"/>
         <link rel="search" title="搜索" href="search.html"/>
-    <link rel="top" title="AIUI DOC 1034 文档" href="#"/>
+    <link rel="top" title="AIUI DOC 1042 文档" href="#"/>
         <link rel="next" title="1. AIUI概述" href="chapters/01_desp.html"/> 
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1034
+                1042
               </div>
             
           
@@ -88,14 +88,10 @@
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chapters/01_desp.html">1. AIUI概述</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/02_demoboard.html">2. 评估板</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/03_prepare.html">3. 准备</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/04_develop.html">4. 集成方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/05_msg&amp;event.html">5. Message和Event</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/06_wakeup_tts.html">6. 唤醒和合成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/07_iat_nlp.html">7. AIUI结果</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/08_offline_cmd.html">8. 离线命令词识别</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/09_uart.html">9. 串口</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/10_debug.html">10. AIUI调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/03_develop.html">3. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/04_SDK.html">4. AIUI SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/05_features.html">5. 功能特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/appendix.html">附录</a></li>
 </ul>
 
             
@@ -145,7 +141,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chapters/01_desp.html">1. AIUI概述</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c01/01_definition.html">1.1. 产品定义</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c01/01_definition.html">1.1 产品定义</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c01/02_structure.html">1.2. 产品框架</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c01/03_features.html">1.3. 产品特性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c01/04_areas.html">1.4. 适合领域</a></li>
@@ -153,60 +149,41 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/02_demoboard.html">2. 评估板</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="c02/01_description.html">2.1. 简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c02/02_explain.html">2.2. 软件说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c02/03_experience.html">2.3 快速体验</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c02/04_Q&amp;A.html">2.4 常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c02/02_config.html">2.2. 创建配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c02/03_use.html">2.3 交互使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c02/04_custom.html">2.4 自定义配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c02/05_upgrade.html">2.5 开发包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c02/06_debug.html">2.6 调试</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/03_prepare.html">3. 准备</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c03/01_relationship.html">3.1 内部关系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c03/02_aiuicfg.html">3.2 配置文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c03/03_aiuicfg_provider.html">3.3 AIUI配置Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/03_develop.html">3. 集成方式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c03/01_coreboard.html">3.1 核心板模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c03/02_softcore.html">3.2 软核模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c03/03_ctrboard.html">3.3 上位机模式</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/04_develop.html">4. 集成方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c04/01_coreboard.html">4.1 核心板模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c04/02_softcore.html">4.2 软核模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c04/03_ctrboard.html">4.3 上位机模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c04/04_uart&amp;sdk.html">4.4 串口和SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/04_SDK.html">4. AIUI SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c04/01_servicekit.html">4.1 AIUIServiceKit SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c04/02_uartkit.html">4.2 串口 SDK</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/05_msg&amp;event.html">5. Message和Event</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c05/01_aiuimessage.html">5.1 AIUIMessage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c05/02_aiuievent.html">5.2 AIUIEvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c05/03_errorcode.html">5.3 AIUI错误码</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/05_features.html">5. 功能特性</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c05/01_config.html">5.1 配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/02_msg&amp;event.html">5.2 Msg&amp;Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/03_state.html">5.3 AIUI状态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/04_result.html">5.4 结果解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/05_interact.html">5.5 交互控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/06_audio.html">5.6 录音处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/07_offline.html">5.7 离线命令词识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/08_tpp.html">5.8 后处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/09_params.html">5.9 动态配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c05/10_error.html">5.10 错误处理</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/06_wakeup_tts.html">6. 唤醒和合成</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c06/01_wakeup.html">6.1 唤醒</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c06/02_tts.html">6.2 合成</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/07_iat_nlp.html">7. AIUI结果</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c07/01_iat.html">7.1 听写</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c07/02_nlp.html">7.2 语义结果</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c07/03_qa.html">7.3 常见问题</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/08_offline_cmd.html">8. 离线命令词识别</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c08/01_descrption.html">8.1. 准备</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c08/02_start.html">8.2. 如何开启离线命令词模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c08/03_develop.html">8.3. 开发使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c08/04_cautions.html">8.4. 注意事项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c08/05_appendix.html">8.5. 附录</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/09_uart.html">9. 串口</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c09/01_protocal.html">9.1 AIUI串口协议</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c09/02_uart_android.html">9.2 串口协议Android实现参考</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c09/03_custom.html">9.3 自定义数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c09/04_factorytest.html">9.4 串口工装测试</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c09/05_uart_QA.html">9.5 常见问题</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="chapters/10_debug.html">10. AIUI调试</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c10/01_adb_debug.html">10.1 ADB 调试</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c10/02_record_raw.html">10.2 音频保存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/appendix.html">附录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix/01_glosarry.html">6.1 名词解释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/02_errorcode.html">6.2 AIUI错误码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/03_tts.html">6.3 TTS合成</a></li>
 </ul>
 </li>
 </ul>
@@ -260,7 +237,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1034',
+            VERSION:'1042',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

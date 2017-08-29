@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.2 用户个性化 &mdash; AIUI DOC 1042 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI DOC 1042 文档" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI DOC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1042
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_develop.html">3. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/04_SDK.html">4. AIUI SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_features.html">5. 功能特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/appendix.html">附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI DOC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>6.2 用户个性化</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c06/02_individual.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6.2 用户个性化<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="config-msg-event">
+<span id="individual-label"></span><h2>6.2.1 Config&amp;Msg&amp;Event<a class="headerlink" href="#config-msg-event" title="永久链接至标题">¶</a></h2>
+<p><strong>Config</strong></p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="s">&quot;audioparams&quot;</span><span class="o">:</span> <span class="o">{</span>
+        <span class="s">&quot;pers_param&quot;</span><span class="o">:</span><span class="s">&quot;{\&quot;appid\&quot;:\&quot;\&quot;, \&quot;uid\&quot;:\&quot;\&quot;, \&quot;custom_key\&quot;:\&quot;custom_val\&quot;}&quot;</span><span class="o">,</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Message</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="7%" />
+<col width="4%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>msgType（消息类型）</td>
+<td>取值</td>
+<td>返回</td>
+<td><div class="first last line-block">
+<div class="line">说明</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_SET_PARAMS</td>
+<td>10</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>设置参数配置</strong></div>
+<div class="line"><br /></div>
+<div class="line">用params携带参数设置JSON字符串，</div>
+<div class="line">具体格式参照aiui.cfg文件，实时生效</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_SYNC</td>
+<td>13</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><strong>向AIUI服务同步数据</strong></div>
+<div class="line"><br /></div>
+<div class="line">arg1表示同步的数据类型</div>
+<div class="line">data表示同步数据的内容</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_QUERY_SYNC_STATUS</td>
+<td>24</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><strong>查询数据同步状态</strong></div>
+<div class="line"><br /></div>
+<div class="line">arg1表示状态查询的类型</div>
+<div class="line">params包含查询条件</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>6.2.2 使用场景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>AIUI开放平台支持开发者DIY自己的<a class="reference external" href="http://aiui.xfyun.cn/info/guide#100">自定义技能</a>，以满足平台内置技能不能满足的需求。</p>
+<p>在自定义技能中，开发者可以将语法定义中的语义槽与某个实体关联，实体类似一个包含所有支持说法的字典，比如开放平台支持内置的开放
+实体艺术家<code class="docutils literal"><span class="pre">IFLYTEK.Artist</span></code>就涵盖了很多歌手的名字和对应昵称等这些说法。</p>
+<p>除了内置的开放实体，AIUI开放平台也支持开发者定义新的实体，在后台添加对应的支持的说法，这种实体为静态实体。另外支持开发者只在后台
+定义实体的数据格式，然后通过AIUI客户端接口动态上传支持说法的具体内容，这种实体为动态实体。下面提到的接口的作用即为动态上传和使用
+动态实体。</p>
+<p>自定义技能和实体的更多细节参考AIUI开放平台上<a class="reference external" href="http://aiui.xfyun.cn/info/guide#100">自定义技能</a>。</p>
+</div>
+<div class="section" id="id5">
+<h2>6.2.3 动态实体<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3>6.2.3.1 动态实体定义<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>一个动态实体的定义可以包含多个资源Resource的定义，资源定义中包含了资源名称，以及从客户端上传数据抽取说法的字段名以及生效的维度。
+生效的维度目前有用户级(uid)、应用级(appid)、自定义级，在客户端上传对应的资源数据时，维度信息需要和定义时保持一致。</p>
+</div>
+<div class="section" id="upload-schema-label">
+<span id="id7"></span><h3>6.2.3.2 动态上传资源数据<a class="headerlink" href="#upload-schema-label" title="永久链接至标题">¶</a></h3>
+<p>通过<code class="docutils literal"><span class="pre">CMD_SYNC</span></code> 上传同步资源数据，arg1表示同步的数据类型，动态实体对应<code class="docutils literal"><span class="pre">SYNC_DATA_SCHEMA</span></code>（常量对应值为3）。
+data为同步JSON内容的utf-8二进制数据。
+JSON内容示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+        <span class="s">&quot;param&quot;</span><span class="o">:</span> <span class="o">{</span>
+                <span class="s">&quot;appid&quot;</span><span class="o">:</span> <span class="s">&quot;56ac196f&quot;</span><span class="o">,</span>                    <span class="c1">// 雅典娜开放平台appid</span>
+                <span class="s">&quot;id_name&quot;</span><span class="o">:</span> <span class="s">&quot;uid&quot;</span><span class="o">,</span>                           <span class="c1">// 维度</span>
+                <span class="s">&quot;id_value&quot;</span><span class="o">:</span> <span class="s">&quot;&quot;</span><span class="o">,</span>                 <span class="c1">// 维度具体值，当维度取uid或appid时，该值可取空，AIUI会自动补全</span>
+                <span class="s">&quot;res_name&quot;</span><span class="o">:</span> <span class="s">&quot;user_applist&quot;</span>          <span class="c1">// 资源名称</span>
+        <span class="o">},</span>
+        <span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="s">&quot;xxxxxx&quot;</span>                            <span class="c1">// 与schema名称对应的数据内容base64编码</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">id_name</span></code>与动态实体定义资源时指定的维度对应，如果定义时是用户级，那此处<code class="docutils literal"><span class="pre">id_name</span></code>就对应<code class="docutils literal"><span class="pre">uid</span></code>。
+<code class="docutils literal"><span class="pre">id_value</span></code>是维度具体值，如<code class="docutils literal"><span class="pre">id_name</span></code>为uid，<code class="docutils literal"><span class="pre">id_value</span></code>就需要是该资源针对生效的用户的具体UID，AIUI会使用
+当前用户UID进行补全，appid同理。自定义维度因为是由开发者自定义，所以<code class="docutils literal"><span class="pre">id_name</span></code>、<code class="docutils literal"><span class="pre">id_value</span></code>都需要设置具体值。</p>
+<p>通过指定<code class="docutils literal"><span class="pre">id_name</span></code>、<code class="docutils literal"><span class="pre">id_value</span></code>，上传的动态实体资源数据到服务端就有了唯一的从属，在<a class="reference internal" href="#individual-work-label"><span class="std std-ref">生效使用</span></a>时就可以指定此处的<code class="docutils literal"><span class="pre">id_name</span></code>、<code class="docutils literal"><span class="pre">id_value</span></code>的值就能生效使用当前上传的动态实体资源。</p>
+<p>data中是原始资源数据的base64编码内容。原始资源数据是包含多条json记录的文本，通过动态实体定义时的抽取字段名可以从每条
+json记录中抽取出定义支持的说法。</p>
+<p>如定义资源时数据抽取的主列名为appName，别名为alias，那就要确保每条json记录中都要包含如上的字段（可以包含冗余字段，如下面的extra字段），
+示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span>{&quot;appName&quot;: &quot;微信&quot;， &quot;alias&quot;: &quot;wechat&quot;, &quot;extra&quot;: &quot;xxx&quot;}
+{&quot;appName&quot;: &quot;新浪微博&quot;， &quot;alias&quot;: &quot;微博&quot;, &quot;extra&quot;: &quot;yyy&quot;}
+{&quot;appName&quot;: &quot;Telegram&quot;， &quot;alias&quot;: &quot;电报&quot;, &quot;extra&quot;: &quot;zzz&quot;}
+{&quot;appName&quot;: &quot;讯飞输入法&quot;， &quot;alias&quot;: &quot;&quot;, &quot;extra&quot;: &quot;uuu&quot;}
+</pre></div>
+</div>
+<p>data的实际内容是将如上数据进行base64编码后的结果。</p>
+<p>同步上传的代码示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">JSONObject</span> <span class="n">syncSchemaJson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+
+<span class="n">JSONObject</span> <span class="n">paramJson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+
+<span class="n">paramJson</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;appid&quot;</span><span class="o">,</span> <span class="s">&quot;56ac196f&quot;</span><span class="o">);</span>
+<span class="n">paramJson</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;id_name&quot;</span><span class="o">,</span> <span class="s">&quot;uid&quot;</span><span class="o">);</span>
+<span class="n">paramJson</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;res_name&quot;</span><span class="o">,</span> <span class="s">&quot;user_applist&quot;</span><span class="o">);</span>
+
+<span class="n">syncSchemaJson</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;param&quot;</span><span class="o">,</span> <span class="n">paramJson</span><span class="o">);</span>
+<span class="n">syncSchemaJson</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;data&quot;</span><span class="o">,</span> <span class="n">Base64</span><span class="o">.</span><span class="na">encodeToString</span><span class="o">(</span><span class="n">FileUtil</span><span class="o">.</span><span class="na">readAssetsFile</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">&quot;file_path&quot;</span><span class="o">),</span>  <span class="n">Base64</span><span class="o">.</span><span class="na">DEFAULT</span> <span class="o">|</span> <span class="n">Base64</span><span class="o">.</span><span class="na">NO_WRAP</span><span class="o">));</span>
+
+<span class="c1">// 传入的数据一定要为utf-8编码</span>
+<span class="kt">byte</span><span class="o">[]</span> <span class="n">syncData</span> <span class="o">=</span> <span class="n">syncSchemaJson</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">getBytes</span><span class="o">(</span><span class="s">&quot;utf-8&quot;</span><span class="o">);</span>
+
+<span class="n">AIUIMessage</span> <span class="n">syncAthenaMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AIUIMessage</span><span class="o">(</span><span class="n">AIUIConstant</span><span class="o">.</span><span class="na">CMD_SYNC</span><span class="o">,</span>
+                                <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">SYNC_DATA_SCHEMA</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="n">syncData</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">CMD_SYNC</span></code> 完成后会有<code class="docutils literal"><span class="pre">EVENT_CMD_RETURN</span></code>事件回调，可以获取该操作对应的sid，便于后面查询使用:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">processCmdReturnEvent</span><span class="o">(</span><span class="n">AIUIEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">arg1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">case</span> <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">CMD_SYNC</span><span class="o">:</span> <span class="o">{</span>
+                        <span class="kt">int</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&quot;sync_dtype&quot;</span><span class="o">);</span>
+
+                        <span class="c1">//arg2表示结果</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">event</span><span class="o">.</span><span class="na">arg2</span><span class="o">)</span> <span class="o">{</span>          <span class="c1">// 同步成功</span>
+                                <span class="k">if</span> <span class="o">(</span><span class="n">AIUIConstant</span><span class="o">.</span><span class="na">SYNC_DATA_SCHEMA</span> <span class="o">==</span> <span class="n">dtype</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="n">mSyncSid</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;sid&quot;</span><span class="o">);</span>
+                                        <span class="n">showTip</span><span class="o">(</span><span class="s">&quot;schema数据同步成功，sid=&quot;</span> <span class="o">+</span> <span class="n">mSyncSid</span><span class="o">);</span>
+                                <span class="o">}</span>
+                        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                                <span class="k">if</span> <span class="o">(</span><span class="n">AIUIConstant</span><span class="o">.</span><span class="na">SYNC_DATA_SCHEMA</span> <span class="o">==</span> <span class="n">dtype</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="n">mSyncSid</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;sid&quot;</span><span class="o">);</span>
+                                        <span class="n">showTip</span><span class="o">(</span><span class="s">&quot;schema数据同步出错：&quot;</span> <span class="o">+</span> <span class="n">event</span><span class="o">.</span><span class="na">arg2</span> <span class="o">+</span> <span class="s">&quot;，sid=&quot;</span> <span class="o">+</span> <span class="n">mSyncSid</span><span class="o">);</span>
+                                <span class="o">}</span>
+                        <span class="o">}</span>
+                <span class="o">}</span> <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>6.2.3.3 查询打包状态<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>通过<code class="docutils literal"><span class="pre">CMD_SYNC</span></code>上传同步动态实体的资源数据后，AIUI服务端会进行处理然后生效，处理的过程是异步的，可以通过<code class="docutils literal"><span class="pre">CMD_QUERY_SYNC_STATUS</span></code>查询上传的资源数据是否处理成功。</p>
+<p>arg1表示状态查询的类型，动态实体对应<code class="docutils literal"><span class="pre">SYNC_DATA_SCHEMA</span></code>（常量对应值为3），params为json，包含需要对应同步上传操作的sid，示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">JSONObject</span> <span class="n">paramsJson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="n">paramsJson</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;sid&quot;</span><span class="o">,</span> <span class="n">mSyncSid</span><span class="o">);</span>
+
+<span class="n">AIUIMessage</span> <span class="n">querySyncMsg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AIUIMessage</span><span class="o">(</span><span class="n">AIUIConstant</span><span class="o">.</span><span class="na">CMD_QUERY_SYNC_STATUS</span><span class="o">,</span>
+                                                                <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">SYNC_DATA_SCHEMA</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span>
+                                                                <span class="n">paramsJson</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span> <span class="kc">null</span><span class="o">);</span>
+<span class="n">mAIUIAgent</span><span class="o">.</span><span class="na">sendMessage</span><span class="o">(</span><span class="n">querySyncMsg</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">CMD_QUERY_SYNC_STATUS</span></code>执行完成后会有<code class="docutils literal"><span class="pre">EVENT_CMD_RETURN</span></code>事件回调，表示查询结果，解析示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">processCmdReturnEvent</span><span class="o">(</span><span class="n">AIUIEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">arg1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//schema数据打包结果查询结果</span>
+                <span class="k">case</span> <span class="n">AIUIConstant</span><span class="o">.</span><span class="na">CMD_QUERY_SYNC_STATUS</span><span class="o">:</span> <span class="o">{</span>
+                        <span class="kt">int</span> <span class="n">syncType</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&quot;sync_dtype&quot;</span><span class="o">);</span>
+
+                        <span class="k">if</span> <span class="o">(</span><span class="n">AIUIConstant</span><span class="o">.</span><span class="na">SYNC_DATA_QUERY</span> <span class="o">==</span> <span class="n">syncType</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;result&quot;</span><span class="o">);</span>
+
+                                <span class="k">if</span> <span class="o">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">event</span><span class="o">.</span><span class="na">arg2</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="n">showTip</span><span class="o">(</span><span class="s">&quot;查询结果：&quot;</span> <span class="o">+</span> <span class="n">result</span><span class="o">);</span>
+                                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                                        <span class="n">showTip</span><span class="o">(</span><span class="s">&quot;schema数据状态查询出错：&quot;</span> <span class="o">+</span> <span class="n">event</span><span class="o">.</span><span class="na">arg2</span> <span class="o">+</span>
+                                                        <span class="s">&quot;, result:&quot;</span> <span class="o">+</span> <span class="n">result</span><span class="o">);</span>
+                                <span class="o">}</span>
+                        <span class="o">}</span>
+                <span class="o">}</span> <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="individual-work-label">
+<span id="id9"></span><h3>6.2.3.4 生效使用<a class="headerlink" href="#individual-work-label" title="永久链接至标题">¶</a></h3>
+<p>通过<code class="docutils literal"><span class="pre">CMD_SET_PARAMS</span></code>设置<code class="docutils literal"><span class="pre">pers_param</span></code>即可使用已设置的动态实体（<code class="docutils literal"><span class="pre">CMD_SET_PARAMS</span></code>具体用法参见<a class="reference internal" href="../c05/09_params.html#set-params-label"><span class="std std-ref">动态配置</span></a>），
+<code class="docutils literal"><span class="pre">pers_param</span></code>的示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="s">&quot;audioparams&quot;</span><span class="o">:</span> <span class="o">{</span>
+        <span class="s">&quot;pers_param&quot;</span><span class="o">:</span><span class="s">&quot;{\&quot;appid\&quot;:\&quot;\&quot;, \&quot;uid\&quot;:\&quot;\&quot;, \&quot;custom_key\&quot;:\&quot;custom_val\&quot;}&quot;</span><span class="o">,</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>如果需要在本机器上生效当前应用对应的所有应用级的动态实体，在<code class="docutils literal"><span class="pre">pers_param</span></code>加入<code class="docutils literal"><span class="pre">\&quot;appid\&quot;:\&quot;\&quot;</span></code>（值留空，
+AIUI中会自动补全appid和uid的值），同理用户级动态实体生效需要加入<code class="docutils literal"><span class="pre">\&quot;uid\&quot;:\&quot;\&quot;</span></code>。</p>
+<p>对于自定义维度需要用后台定义实体时的自定义维度名作为key，使用<a class="reference internal" href="#upload-schema-label"><span class="std std-ref">动态上传</span></a>指定的自定义维度作为值。如
+后台定义的自定义维度名为<code class="docutils literal"><span class="pre">vendor</span></code>，那在<a class="reference internal" href="#upload-schema-label"><span class="std std-ref">动态上传</span></a>时就需要构造如下数据进行上传:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+        <span class="s">&quot;param&quot;</span><span class="o">:</span> <span class="o">{</span>
+                <span class="s">&quot;appid&quot;</span><span class="o">:</span> <span class="s">&quot;56ac196f&quot;</span><span class="o">,</span>                    <span class="c1">// 雅典娜开放平台appid</span>
+                <span class="s">&quot;id_name&quot;</span><span class="o">:</span> <span class="s">&quot;vendor&quot;</span><span class="o">,</span>                    <span class="c1">// 自定义维度名</span>
+                <span class="s">&quot;id_value&quot;</span><span class="o">:</span> <span class="s">&quot;spec_vendor&quot;</span><span class="o">,</span>      <span class="c1">// 自定义维度value</span>
+                <span class="s">&quot;res_name&quot;</span><span class="o">:</span> <span class="s">&quot;user_applist&quot;</span>          <span class="c1">// 资源名称</span>
+        <span class="o">},</span>
+        <span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="s">&quot;xxxxxx&quot;</span>                            <span class="c1">// 与schema名称对应的数据内容base64编码</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>那对应需要在交互时使用该自定义维度对应的动态实体就需要加入<code class="docutils literal"><span class="pre">\&quot;vendor\&quot;:\&quot;spec_vendor\&quot;</span></code>。</p>
+<p>除了通过<code class="docutils literal"><span class="pre">CMD_SET_PARAMS</span></code>设置<code class="docutils literal"><span class="pre">pers_param</span></code>，也可以在<a class="reference internal" href="01_write.html#data-write-label"><span class="std std-ref">写入音频</span></a>时设置该参数。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>6.2.4 所见即可说<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id11">
+<h3>6.2.4.1 所见即可说定义<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>动态实体还有一种特殊的维度，名为所见即可说。该种动态实体上传的内容只会生效使用一次，在上传后生效交互一次后，即会恢复无数据的状态。
+该维度适用于一些临时数据，如只在当前屏幕显示的信息，在上传当前屏幕内容数据后，用户根据当前屏幕的内容进行交互，交互过后屏幕内容即会刷新，
+更多示例和解释参考AIUI开放平台上<a class="reference external" href="http://aiui.xfyun.cn/info/guide#100">自定义技能</a>。</p>
+</div>
+<div class="section" id="id13">
+<h3>6.2.4.2 动态上传资源数据<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>通过<code class="docutils literal"><span class="pre">CMD_SYNC</span></code> 上传同步资源数据，arg1表示同步的数据类型，所见即可说对应<code class="docutils literal"><span class="pre">SYNC_DATA_SPEAKABLE</span></code>（常量对应值为5）。
+data为同步JSON内容的utf-8二进制数据。
+JSON内容示例如下:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+        <span class="c1">// 识别数据</span>
+        <span class="s">&quot;iat_user_data&quot;</span><span class="o">:</span> <span class="o">{</span>
+                <span class="s">&quot;recHotWords&quot;</span><span class="o">:</span> <span class="s">&quot;播报内容|地图显示|路径优先&quot;</span><span class="o">,</span>
+                <span class="s">&quot;sceneInfo&quot;</span><span class="o">:</span> <span class="o">{}</span>
+        <span class="o">},</span>
+
+        <span class="c1">// 语义数据</span>
+        <span class="s">&quot;nlp_user_data&quot;</span><span class="o">:</span> <span class="o">{</span>
+                <span class="s">&quot;res&quot;</span><span class="o">:</span> <span class="o">[</span>
+                        <span class="o">{</span>
+                                <span class="s">&quot;res_name&quot;</span><span class="o">:</span> <span class="s">&quot;vendor_applist&quot;</span><span class="o">,</span>           <span class="c1">// 资源名称</span>
+                                <span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="s">&quot;xxxxxx&quot;</span>                <span class="c1">// 数据的base64编码</span>
+                        <span class="o">}</span>
+                <span class="o">],</span>
+                <span class="s">&quot;skill_name&quot;</span><span class="o">:</span> <span class="s">&quot;telephone&quot;</span>                                       <span class="c1">// 对应的技能名称</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>上传数据中包含识别和语义数据，识别数据包含所有识别热词，以|分隔，语义数据中包含资源名称，资源数据，资源对应的技能名称。
+资源名称和资源数据与上面描述的动态实体中的字段相同，技能名称是该实体对应生效的技能。</p>
+<p>上传的代码示例参考如上<a class="reference internal" href="#upload-schema-label"><span class="std std-ref">动态实体数据构造上传部分</span></a>。</p>
+</div>
+<div class="section" id="id14">
+<h3>6.2.4.4 生效使用<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>与<a class="reference internal" href="#individual-work-label"><span class="std std-ref">动态实体生效使用</span></a>类似，需要在pers_param中添加uid即可生效使用:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="s">&quot;pers_param&quot;</span><span class="o">:</span><span class="s">&quot;{\&quot;uid\&quot;:\&quot;\&quot;}&quot;</span><span class="o">,</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2017, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1042',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

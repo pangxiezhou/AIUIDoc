@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.2.4 常见问题 &mdash; AIUI DOC 1042 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="AIUI DOC 1042 文档" href="../../index.html"/>
+        <link rel="up" title="4.2 串口 SDK" href="../02_uartkit.html"/>
+        <link rel="next" title="5. 功能特性" href="../../chapters/05_features.html"/>
+        <link rel="prev" title="4.2.3 自定义数据" href="03_custom.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AIUI DOC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1042
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/03_develop.html">3. 集成方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../chapters/04_SDK.html">4. AIUI SDK</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_servicekit.html">4.1 AIUIServiceKit SDK</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../02_uartkit.html">4.2 串口 SDK</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_protocal.html">4.2.1 AIUI串口协议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_uart_android.html">4.2.2 串口协议实现参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_custom.html">4.2.3 自定义数据</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.2.4 常见问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/05_features.html">5. 功能特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/appendix.html">附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AIUI DOC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../chapters/04_SDK.html">4. AIUI SDK</a> &raquo;</li>
+      
+          <li><a href="../02_uartkit.html">4.2 串口 SDK</a> &raquo;</li>
+      
+    <li>4.2.4 常见问题</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/c04/uartkit/04_uart_QA.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>4.2.4 常见问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<dl class="docutils">
+<dt>Q:  怎么查看AIUI上串口消息的处理接收</dt>
+<dd>A： 通过<code class="docutils literal"><span class="pre">adb</span> <span class="pre">logcat</span> <span class="pre">-s</span> <span class="pre">UART_Manager:*</span></code>（adb连接参照<a class="reference internal" href="../../c02/06_debug.html#uart-debug-label"><span class="std std-ref">调试</span></a>）查看AIUI串口的日志。</dd>
+<dt>Q:  串口消息构造后发送给AIUI，为什么没有执行对应操作（如发了合成命令，没有合成播放等）？</dt>
+<dd><p class="first">A： 没有执行对应操作可能的原因分三种：</p>
+<blockquote class="last">
+<div><blockquote>
+<div><ol class="arabic simple">
+<li>消息格式构造问题</li>
+<li>消息ID重复</li>
+<li>消息内容构造问题</li>
+</ol>
+</div></blockquote>
+<p>对于上述三种原因可以按如下方法依次排查：</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">如果收到了AIUI对消息的确认消息，那说明消息构造没问题，反之应该检查下消息构造的格式是否有问题。</p>
+</li>
+<li><p class="first">因为协议中<a class="reference internal" href="01_protocal.html#uart-msg-id-label"><span class="std std-ref">消息ID</span></a>的说明，AIUI会对消息ID与之前接受的200条消息ID进行比较，
+如果有相同则认为是因确认超时重发的消息，而进行过滤，直接返回对应的确认消息，不会对消息进行解析处理。</p>
+<p>通过<code class="docutils literal"><span class="pre">adb</span> <span class="pre">logcat</span> <span class="pre">-s</span> <span class="pre">UART_Manager:*</span></code>（adb连接参照<a class="reference internal" href="../../c02/06_debug.html#uart-debug-label"><span class="std std-ref">调试</span></a>）查看AIUI串口的日志。</p>
+<p>如果log中有:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">recv</span> <span class="n">same</span> <span class="n">data</span><span class="o">,</span> <span class="n">send</span> <span class="n">ack</span> <span class="n">drop</span> <span class="n">it</span> <span class="o">!!!</span>
+</pre></div>
+</div>
+<p>那说明消息ID与之前有重复，请检查消息ID的构造逻辑问题。</p>
+</li>
+<li><p class="first">消息内容的构造问题，请仔细对照<a class="reference internal" href="01_protocal.html#uart-control-msg-label"><span class="std std-ref">主控消息</span></a>内定义的消息内容格式，
+比如合成消息中的文本内容的编码格式要为utf-8。</p>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</dd>
+<dt>Q:  底板上有两个串口，AIUI使用了UART1，开发程序可以使用UART0吗？</dt>
+<dd><p class="first">A： UART0是AIUI的调试串口，不能正常读写，所以UART0不能使用。</p>
+<blockquote class="last">
+<div><p>如果对AIUI本身的串口功能有依赖，第三方应用如果需要读写串口发送自己的数据内容，
+可以考虑使用<a class="reference internal" href="03_custom.html#uart-custome-label"><span class="std std-ref">串口自定义</span></a>的功能。</p>
+<p>如果对AIUI本身的串口功能无依赖，<a class="reference internal" href="../../c02/05_upgrade.html#demoboard-relationship-label"><span class="std std-ref">AIUI软件内部关系</span></a>中
+UARTService负责串口通信，所以将UARTService卸载即可独立读写串口（不推荐）。</p>
+</div></blockquote>
+</dd>
+<dt>Q：使用UARTKit SDK时设备初始化失败</dt>
+<dd>A：导致设备初始化失败的原因有两种，第一是设备打开失败，可能由于设备不存在、没有权限；第二是设备设置失败，
+因为不同上位机的串口配置不一样，UARTKit SDK的串口初始化设置仅在评估板上测试可用，所以需要开发者自己更改UARTKit
+SDK中设备初始化参数的代码，自行修改测试实现。</dd>
+<dt>Q: 使用UARTKit SDK串口功能不正常</dt>
+<dd><p class="first">A：通过<code class="docutils literal"><span class="pre">adb</span> <span class="pre">logcat</span> <span class="pre">-s</span> <span class="pre">UART_Manager:*</span></code>查看上位机和AIUI模块的串口收发日志，确定收发不成功的问题点。</p>
+<p class="last">比如一方有发送日志显示，但是另外一方无对应的接收日志，那可以通过将发送TX线通过USB转接线接到电脑上，用一般的串口查看助手，确认
+数据是不是已发送。</p>
+</dd>
+<dt>Q：使用UARTKit SDK时日志中频繁出现DropHead，长时间不回调消息接收</dt>
+<dd>A：串口数据结构定义中定义了<a class="reference internal" href="01_protocal.html#uart-data-format-label"><span class="std std-ref">同步头</span></a>，在底层进行数据接收中，会从数据流中
+匹配同步头，作为一条消息的数据开始标记，如果数据流中一直没有同步头，那就会一直打印drop head的日志。这种情况
+大部分的原因是上位机接收有误导致，可以打印具体接收的数据和定义的串口数据格式比较确定。</dd>
+<dt>Q：使用UARTKit SDK时底层打印接收日志，但是一直不回调消息接收</dt>
+<dd><p class="first">A：如上Drop Head的问题，串口接收数据时在寻找到消息数据开始的同步头后，会根据其后的<a class="reference internal" href="01_protocal.html#uart-data-format-label"><span class="std std-ref">长度信息</span></a>接收
+一定长度的数据，然后校验通过后向上传递，如果接收数据有误，导致长度信息解析过大，那后面所有正常的消息都会当作这条消息的数据一直
+接收，导致上层长时间没有消息回调接收，即使该消息接收完成，也会因为校验不通过直接丢弃。</p>
+<p class="last">串口接收数据出错也是导致如上异常的原因，需要排查上位机的串口接收功能。如果只是在音乐、火车、新闻等数据量大的情况
+下有这个问题，可以通过<a class="reference internal" href="01_protocal.html#uart-msg-filter-label"><span class="std std-ref">串口结果过滤</span></a>将大数据量的技能消息过滤，只在AIUI模块上处理，不传输到上位机。
+也可以在底层接收数据时，对解析接收长度做过滤，解析出超过限值的消息直接丢弃，AIUI压缩过后的数据量是6k以内。</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../chapters/05_features.html" class="btn btn-neutral float-right" title="5. 功能特性" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="03_custom.html" class="btn btn-neutral" title="4.2.3 自定义数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2017, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1042',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

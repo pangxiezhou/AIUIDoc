@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.4.4. 注意事项 &mdash; AIUI DOC 1042 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="AIUI DOC 1042 文档" href="../../index.html"/>
+        <link rel="up" title="5.7 离线命令词识别" href="../07_offline.html"/>
+        <link rel="next" title="5.4.5. 附录" href="05_appendix.html"/>
+        <link rel="prev" title="5.4.3. 开发使用" href="03_develop.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AIUI DOC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1042
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/03_develop.html">3. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/04_SDK.html">4. AIUI SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../chapters/05_features.html">5. 功能特性</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_config.html">5.1 配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_msg&amp;event.html">5.2 Msg&amp;Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_state.html">5.3 AIUI状态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_result.html">5.4 结果解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_interact.html">5.5 交互控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_audio.html">5.6 录音处理</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../07_offline.html">5.7 离线命令词识别</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_descrption.html">5.4.1. 准备</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_start.html">5.4.2. 如何开启离线命令词模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_develop.html">5.4.3. 开发使用</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">5.4.4. 注意事项</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">5.4.4.1.离线命令识别与线上语义结合</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05_appendix.html">5.4.5. 附录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../08_tpp.html">5.8 后处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_params.html">5.9 动态配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_error.html">5.10 错误处理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/appendix.html">附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AIUI DOC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../chapters/05_features.html">5. 功能特性</a> &raquo;</li>
+      
+          <li><a href="../07_offline.html">5.7 离线命令词识别</a> &raquo;</li>
+      
+    <li>5.4.4. 注意事项</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/c05/offline/04_cautions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>5.4.4. 注意事项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>5.4.4.1.离线命令识别与线上语义结合<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>AIUI在纯离线模式下，功能很受限。如果需要使用离线命令的话，推荐使用混合模式，提高常见命令短语的识别速度，提升体验。</p>
+<p>离线命令词的功能会比线上识别要弱一点，所以可能存在说法在离线命令词没有识别结果，在云端听写会正确听写结果。
+如果在云端没有配置对应的语义，本次结果就会拒识。所以混合模式下，在本地定义离线命令语法的同时在云端说法也有对应的语义，
+这样会减少拒识的情况，提升体验。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="05_appendix.html" class="btn btn-neutral float-right" title="5.4.5. 附录" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="03_develop.html" class="btn btn-neutral" title="5.4.3. 开发使用" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2017, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1042',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

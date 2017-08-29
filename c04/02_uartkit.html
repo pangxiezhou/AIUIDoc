@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.2 串口 SDK &mdash; AIUI DOC 1042 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AIUI DOC 1042 文档" href="../index.html"/>
+        <link rel="up" title="4. AIUI SDK" href="../chapters/04_SDK.html"/>
+        <link rel="next" title="4.2.1 AIUI串口协议" href="uartkit/01_protocal.html"/>
+        <link rel="prev" title="4.1 AIUIServiceKit SDK" href="01_servicekit.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AIUI DOC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1042
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_develop.html">3. 集成方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../chapters/04_SDK.html">4. AIUI SDK</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_servicekit.html">4.1 AIUIServiceKit SDK</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2 串口 SDK</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uartkit/01_protocal.html">4.2.1 AIUI串口协议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uartkit/02_uart_android.html">4.2.2 串口协议实现参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uartkit/03_custom.html">4.2.3 自定义数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uartkit/04_uart_QA.html">4.2.4 常见问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/05_features.html">5. 功能特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/appendix.html">附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AIUI DOC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../chapters/04_SDK.html">4. AIUI SDK</a> &raquo;</li>
+      
+    <li>4.2 串口 SDK</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/c04/02_uartkit.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sdk">
+<span id="uartkitsdk-label"></span><h1>4.2 串口 SDK<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h1>
+<p>AIUI通过串口与上位机通信，定义了一套串口数据交互的协议，通过该协议上位机可以实现获取AIUI的结果，
+配置AIUI的网络，控制AIUI的状态，控制AIUI进行合成播报等功能。如果遇到目前定义的串口交互协议不能满足的需求，
+开发者也可以通过协议中定义的自定义数据消息进行扩展。</p>
+<p>对于定义的串口交互协议，开发包中提供了Android上位机上的实现参考，对于其他平台也有很多开发者共享的实现可以参考。</p>
+<p>下面将详细介绍</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="uartkit/01_protocal.html">4.2.1 AIUI串口协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uartkit/02_uart_android.html">4.2.2 串口协议实现参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uartkit/03_custom.html">4.2.3 自定义数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uartkit/04_uart_QA.html">4.2.4 常见问题</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="uartkit/01_protocal.html" class="btn btn-neutral float-right" title="4.2.1 AIUI串口协议" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01_servicekit.html" class="btn btn-neutral" title="4.1 AIUIServiceKit SDK" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2017, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1042',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

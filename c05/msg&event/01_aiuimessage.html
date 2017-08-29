@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.2.1 AIUIMessage &mdash; AIUI DOC 1042 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/sphinxmark.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="AIUI DOC 1042 文档" href="../../index.html"/>
+        <link rel="up" title="5.2 Msg&amp;Event" href="../02_msg&amp;event.html"/>
+        <link rel="next" title="5.2.2 AIUIEvent" href="02_aiuievent.html"/>
+        <link rel="prev" title="5.2 Msg&amp;Event" href="../02_msg&amp;event.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AIUI DOC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1042
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/01_desp.html">1. AIUI概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/02_demoboard.html">2. 评估板</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/03_develop.html">3. 集成方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/04_SDK.html">4. AIUI SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../chapters/05_features.html">5. 功能特性</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_config.html">5.1 配置文件</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../02_msg&amp;event.html">5.2 Msg&amp;Event</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">5.2.1 AIUIMessage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#msgtype">5.2.1.1 msgType定义</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_aiuievent.html">5.2.2 AIUIEvent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03_state.html">5.3 AIUI状态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_result.html">5.4 结果解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_interact.html">5.5 交互控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_audio.html">5.6 录音处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_offline.html">5.7 离线命令词识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_tpp.html">5.8 后处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_params.html">5.9 动态配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_error.html">5.10 错误处理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/appendix.html">附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AIUI DOC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../chapters/05_features.html">5. 功能特性</a> &raquo;</li>
+      
+          <li><a href="../02_msg&amp;event.html">5.2 Msg&amp;Event</a> &raquo;</li>
+      
+    <li>5.2.1 AIUIMessage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/c05/msg&amp;event/01_aiuimessage.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiuimessage">
+<span id="aiuimessage-label"></span><h1>5.2.1 AIUIMessage<a class="headerlink" href="#aiuimessage" title="永久链接至标题">¶</a></h1>
+<div class="section" id="msgtype">
+<h2>5.2.1.1 msgType定义<a class="headerlink" href="#msgtype" title="永久链接至标题">¶</a></h2>
+<p><strong>注意： CMD_WAKEUP是用于手动唤醒，不能用于频繁的唤醒以延长交互时间，否则我们会停止AIUI的服务。</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="7%" />
+<col width="4%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>msgType（消息类型）</td>
+<td>取值</td>
+<td>返回</td>
+<td><div class="first last line-block">
+<div class="line">说明</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_GET_STATE</td>
+<td>1</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><strong>获取服务状态</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_RESET</td>
+<td>4</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>重置AIUI服务的状态</strong></div>
+<div class="line"><br /></div>
+<div class="line">服务会立即停止并重新启动，进入到待唤醒状态。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_START</td>
+<td>5</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>启动AIUI服务</strong></div>
+<div class="line"><br /></div>
+<div class="line">当AIUI服务停止后，使用此命令启动服务。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_STOP</td>
+<td>6</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>停止AIUI服务</strong></div>
+<div class="line"><br /></div>
+<div class="line">服务停止之后，将不响应外部输入。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_WAKEUP</td>
+<td>7</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>唤醒消息</strong></div>
+<div class="line"><br /></div>
+<div class="line">用于手动唤醒AIUI服务，arg1为唤醒后拾音的波束号，默认为0。</div>
+<div class="line">关于波束的定义参见<a class="reference download internal" href="../../_downloads/麦克风设计参考V0.81.pdf" download=""><code class="xref download docutils literal"><span class="pre">麦克风设计参考</span></code></a>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_RESET_WAKEUP</td>
+<td>8</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>重置唤醒状态</strong></div>
+<div class="line"><br /></div>
+<div class="line">AIUI服务重置为待唤醒状态。若当前为唤醒状态，</div>
+<div class="line">发送该消息重置后会抛出EVENT_SLEEP事件。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_SET_BEAM</td>
+<td>9</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>设置麦克风阵列的拾音波束</strong></div>
+<div class="line-block">
+<div class="line">用arg1携带拾音波束号。</div>
+</div>
+<div class="line">关于波束的定义参见<a class="reference download internal" href="../../_downloads/麦克风设计参考V0.81.pdf" download=""><code class="xref download docutils literal"><span class="pre">麦克风设计参考</span></code></a>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_SET_PARAMS</td>
+<td>10</td>
+<td>无</td>
+<td><div class="first line-block">
+<div class="line"><strong>设置参数配置</strong></div>
+<div class="line"><br /></div>
+<div class="line">用params携带参数设置JSON字符串，</div>
+<div class="line">具体格式参照aiui.cfg文件。</div>
+<div class="line">目前可以修改如下参数，实时生效</div>
+<div class="line"><br /></div>
+</div>
+<blockquote class="last">
+<div><ul class="simple">
+<li>global</li>
+<li>ivw</li>
+<li>speech</li>
+<li>audioparams</li>
+<li>userparams</li>
+</ul>
+<p>示例:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s">&quot;global&quot;</span><span class="o">:{</span>
+     <span class="s">&quot;scene&quot;</span><span class="o">:</span><span class="s">&quot;main&quot;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_UPLOAD_LEXICON</td>
+<td>11</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><a class="reference internal" href="../05_interact.html#upload-hot-words-label"><span class="std std-ref">上传用户识别热词</span></a></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_SEND_LOG</td>
+<td>12</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>发送应用日志到云端，可以帮助分析应用问题</strong></div>
+<div class="line"><br /></div>
+<div class="line">需要将JSON格式的字符串放在params字段中携带。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_BUILD_GRAMMAR</td>
+<td>16</td>
+<td>有</td>
+<td><div class="first last line-block">
+<div class="line"><strong>构建本地语法</strong></div>
+<div class="line"><br /></div>
+<div class="line">用params字段携带bnf语法内容，</div>
+<div class="line">bnf语法规则请参见<a class="reference download internal" href="../../_downloads/BNF语法开发指南.pdf" download=""><code class="xref download docutils literal"><span class="pre">BNF语法开发指南</span></code></a>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_UPDATE_LOCAL_LEXICON</td>
+<td>17</td>
+<td>有</td>
+<td><div class="first line-block">
+<div class="line"><strong>更新本地词表</strong></div>
+<div class="line"><br /></div>
+<div class="line">当构建好本地语法之后，</div>
+<div class="line">可以动态更新某个槽（声明为slot，实质上为词表）的内容</div>
+<div class="line">以动态变更支持的说法。将需要更新的槽名称和内容组成JSON字符串，</div>
+<div class="line">用params字段携带。</div>
+</div>
+<blockquote>
+<div><p>示例:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s">&quot;name&quot;</span><span class="o">:</span><span class="s">&quot;&lt;contact&gt;&quot;</span><span class="o">,</span>  <span class="c1">// 槽名称</span>
+  <span class="s">&quot;content&quot;</span><span class="o">:</span><span class="s">&quot;张三\n李四\n&quot;</span>  <span class="c1">//词表内容</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="last line-block">
+<div class="line">注：只有在成功构建语法之后才能调用。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_START_THROW_AUDIO</td>
+<td>18</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>开始抛出识别音频</strong></div>
+<div class="line">调用之后，抛出<code class="docutils literal"><span class="pre">EVENT_AUDIO</span></code>事件。</div>
+<div class="line">arg1为拾音波束编号设置，若当前未唤醒则会使用该波束拾音，</div>
+<div class="line">若已经处于唤醒状态则arg1不起作用。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_STOP_THROW_AUDIO</td>
+<td>19</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>停止抛出识别音频</strong></div>
+<div class="line">调用之后，停止抛出<code class="docutils literal"><span class="pre">EVENT_AUDIO</span></code>事件</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CMD_RESULT_VALIDATION_ACK</td>
+<td>20</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>结果确认</strong></div>
+<div class="line">在接收到语义、听写、后处理的结果后5s内可发送该指令对结果进行确认，</div>
+<div class="line">AIUI会认为该条结果有效，并重新开始AIUI交互超时的计时</div>
+<div class="line"><br /></div>
+<div class="line">关于交互超时的机制参看<a class="reference internal" href="../config/01_aiuicfg.html#aiui-cfg-label"><span class="std std-ref">AIUI配置</span></a>中<cite>interact_timeout</cite>的解释</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CMD_CLEAN_DIALOG_HISTORY</td>
+<td>21</td>
+<td>无</td>
+<td><div class="first last line-block">
+<div class="line"><strong>清空交互历史</strong></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="aiuicmd-ret-label">注：<strong>有返回</strong>的含义是在向 AIUI 发送一条 CMD 消息后，AIUI会抛出一个对应的<a class="reference internal" href="02_aiuievent.html#aiuievent-label"><span class="std std-ref">EVENT_CMD_RETURN</span></a>事件返回 CMD 消息的处理结果</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02_aiuievent.html" class="btn btn-neutral float-right" title="5.2.2 AIUIEvent" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../02_msg&amp;event.html" class="btn btn-neutral" title="5.2 Msg&amp;Event" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; 版权所有 2017, AIUI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1042',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
